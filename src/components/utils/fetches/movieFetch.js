@@ -6,6 +6,6 @@ export const getAllMovies = (apiKey, setState, key) => {
       }
       return response.json()
     })
-    .then(response => (key ? setState(response.results[key]) : setState(response.results)))
+    .then(response => (key ? setState(response[key]) : setState(response)))
     .catch(error => console.log(error.message))
 }
