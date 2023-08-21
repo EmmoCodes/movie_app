@@ -5,6 +5,7 @@ import MovieList from './components/pages/MovieList/MovieList'
 import LoginPage from './components/pages/LoginPage/LoginPage'
 import Landingpage from './components/pages/Landingpage/Landingpage'
 import GetStarted from './components/pages/GetStarted/GetStarted'
+import NavbarMobile from './components/shared/NavbarMobile/NavbarMobile.jsx'
 
 function App() {
   const location = useLocation()
@@ -20,7 +21,6 @@ function App() {
       {location.pathname !== '/' && location.pathname !== '/getstarted' && location.pathname !== '/login' && (
         <NavbarMobile />
       )}
-
     </>
   )
 }
