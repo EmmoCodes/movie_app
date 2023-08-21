@@ -1,9 +1,9 @@
 import React from 'react'
 import './NavbarMobile.scss'
 import Home from '../../../assets/img/home.svg'
-import Bookmark from '../../../assets/img/Bookmark.svg'
-import Save from '../../../assets/img/Save.svg'
-import Profile from '../../../assets/img/Profile.svg'
+import Bookmark from '../../../assets/img/bookmark.svg'
+import Save from '../../../assets/img/save.svg'
+import Profile from '../../../assets/img/profile.svg'
 
 function NavbarMobile() {
   return (
