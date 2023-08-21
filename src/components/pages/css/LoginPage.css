@@ -1,0 +1,23 @@
+.login_inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  text-align: start;
+  gap: 10px;
+  background: linear-gradient(to bottom right, #fc2121, #ff6b6b);
+}
+.login_inputs input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.login_form button {
+  margin-top: 70px;
+  padding-inline: 50px;
+  padding-block: 16px;
+  background-color: #fc2121;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+}/*# sourceMappingURL=LoginPage.css.map */
