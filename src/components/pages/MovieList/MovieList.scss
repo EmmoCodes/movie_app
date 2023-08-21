@@ -1,0 +1,25 @@
+.movie_wrapper {
+  .movie_frame {
+    display: flex;
+    justify-content: space-between;
+    img {
+      max-width: 100px;
+      border-radius: 10px;
+    }
+    .movie_frame_text {
+      min-width: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      h1 {
+        font-size: 15px;
+      }
+      div {
+        display: flex;
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

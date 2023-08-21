@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
 import { apiKey } from '../../../data/api'
 import MovieItem from '../../shared/MovieItem/MovieItem.jsx'
+import './MovieList.scss'
 
 function MovieList() {
   const [movieData, setMovieData] = useState([])

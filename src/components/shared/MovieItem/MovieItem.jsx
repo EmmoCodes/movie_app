@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+//import star from '../../../assets/img/start.svg'
 import { Link } from 'react-router-dom'
 import { apiKey } from '../../../data/api.js'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
@@ -22,13 +23,17 @@ function MovieItem({ movie }) {
       <Link to="/details">
         <img src={`https://image.tmdb.org/t/p/w200${movie.backdrop_path}`} alt="" />
       </Link>
-      <h1>{movie.title}</h1>
-      <p>{movie.vote_average}</p>
-      <p>{movie.release_date}</p>
-      <p>{movieDetails.runtime}</p>
-      <p>{movieDetails.genres[0].name}</p>
-      <p>{movieDetails.genres[1]?.name}</p>
-      <p>{movieDetails.genres[2]?.name}</p>
+      <div className="movie_frame_text">
+        <h1>{movie.title}</h1>
+        <div>
+          <p>{movie.vote_average}</p>
+          <p>{movie.release_date}</p>
+          <p>{movieDetails.runtime}</p>
+          <p>{movieDetails.genres[0].name}</p>
+          <p>{movieDetails.genres[1]?.name}</p>
+          <p>{movieDetails.genres[2]?.name}</p>
+        </div>
+      </div>
     </div>
   )
 }
