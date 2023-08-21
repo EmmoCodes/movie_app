@@ -1,10 +1,21 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.scss'
-import MovieItem from './components/shared/MovieItem/MovieItem.jsx'
+
+import Landingpage from './components/pages/Landingpage/Landingpage'
+import GetStarted from './components/pages/GetStarted/GetStarted'
+import NavbarMobile from './components/shared/NavbarMobile/NavbarMobile'
+
 
 function App() {
   return (
     <>
-      <MovieItem />
+
+      <Routes>
+        <Route path="/getstarted" element={<GetStarted />} />
+        <Route path="/landingpage" element={<Landingpage />} />
+      </Routes>
+      <NavbarMobile />
+
     </>
   )
 }

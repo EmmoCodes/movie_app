@@ -1,0 +1,11 @@
+.navbarmobilesection {
+  min-width: 100%;
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+  }
+  img:hover {
+    color: red;
+  }
+}
