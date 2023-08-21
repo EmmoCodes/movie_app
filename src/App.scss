@@ -1,16 +1,20 @@
 * {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+
 @font-face {
   font-family: mainfont;
   src: url('./assets/fonts/Poppins/Poppins-Bold.ttf');
 }
+
 @font-face {
   font-family: paragraph;
   src: url('./assets/fonts/Poppins/Poppins-Regular.ttf');
 }
+
 h1,
 h2,
 h3,
@@ -19,6 +23,7 @@ h5,
 h6 {
   font-family: mainfont;
 }
+
 p {
   font-family: paragraph;
 }
