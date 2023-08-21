@@ -4,7 +4,6 @@
   padding: 0;
 }
 
-
 @font-face {
   font-family: mainfont;
   src: url('./assets/fonts/Poppins/Poppins-Bold.ttf');
@@ -25,5 +24,8 @@ h6 {
 }
 
 p {
+  font-family: paragraph;
+}
+li {
   font-family: paragraph;
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-//import star from '../../../assets/img/start.svg'
+import star from '../../../assets/img/polygon.svg'
+import bookmark from '../../../assets/img/bookmark.svg'
 import { Link } from 'react-router-dom'
 import { apiKey } from '../../../data/api.js'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
@@ -17,24 +18,29 @@ function MovieItem({ movie }) {
   if (!movieDetails.id) {
     return <p>Is Loading...</p>
   }
-
   return (
-    <div className="movie_frame">
+    <article className="movie_frame">
       <Link to="/details">
         <img src={`https://image.tmdb.org/t/p/w200${movie.backdrop_path}`} alt="" />
       </Link>
       <div className="movie_frame_text">
-        <h1>{movie.title}</h1>
-        <div>
-          <p>{movie.vote_average}</p>
-          <p>{movie.release_date}</p>
-          <p>{movieDetails.runtime}</p>
-          <p>{movieDetails.genres[0].name}</p>
-          <p>{movieDetails.genres[1]?.name}</p>
-          <p>{movieDetails.genres[2]?.name}</p>
+        <div className="frame_text_headline">
+          <h1>{movie.title}</h1>
+          <img src={bookmark} alt="Bookmark Icon" />
+        </div>
+        <div className="frame_text_info">
+          <p>
+            <img src={star} alt="Star Icon" />
+            {movie.vote_average}
+          </p>
+          <p>{movie.release_date.slice(0, 4)}</p>
+          <p>· {movieDetails.genres[0].name}</p>
+          <p>· {movieDetails.genres[1]?.name}</p>
+          <p>· {movieDetails.genres[2]?.name}</p>
+          <p>{movieDetails.runtime} m</p>
         </div>
       </div>
-    </div>
+    </article>
   )
 }
 
