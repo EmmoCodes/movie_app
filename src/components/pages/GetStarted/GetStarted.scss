@@ -17,7 +17,10 @@ section {
   min-height: 60vh;
   background: linear-gradient(to bottom right, #fc2121, #ff6b6b);
   overflow: hidden;
+<<<<<<< HEAD
   // opacity: 0.5;
+=======
+>>>>>>> main
 }
 
 .get_started_img img:first-child {
@@ -31,6 +34,7 @@ section {
   top: 10px;
 }
 
+<<<<<<< HEAD
 .get_started_text {
   h1 {
     padding-top: 50px;
@@ -51,3 +55,25 @@ section {
     color: #fff;
   }
 }
+=======
+.get_started_text h1 {
+  padding-top: 50px;
+  padding-inline: 40px;
+  padding-bottom: 24px;
+  font-size: 28px;
+}
+.get_started_text p {
+  padding-inline: 36px;
+  padding-bottom: 40px;
+}
+.get_started_text button {
+  padding-inline: 50px;
+  padding-block: 16px;
+  background-color: #fc2121;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+}
+
+/*# sourceMappingURL=GetStarted.css.map */
+>>>>>>> main
