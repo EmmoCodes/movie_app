@@ -1,5 +1,6 @@
 import React from 'react'
 import '../LoginPage/LoginPage.scss'
+import { Link } from 'react-router-dom'
 
 function LoginPage() {
   return (
@@ -16,7 +17,9 @@ function LoginPage() {
         <label htmlFor="password">Your Password</label>
         <input type="text" name="password" id="password" placeholder="Password..." />
       </form>
-      <button>Login</button>
+      <Link to={'./home'}>
+        <button>Login</button>
+      </Link>
     </section>
   )
 }
