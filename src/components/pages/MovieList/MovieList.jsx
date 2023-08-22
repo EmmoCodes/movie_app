@@ -3,7 +3,7 @@ import { getAllMovies } from '../../utils/fetches/movieFetch.js'
 import { apiKey } from '../../../data/api'
 import MovieItem from '../../shared/MovieItem/MovieItem.jsx'
 import './MovieList.scss'
-
+import SearchBar from '../../shared/SearchBar/SearchBar.jsx'
 
 function MovieList() {
   const [movieData, setMovieData] = useState([])
@@ -18,9 +18,10 @@ function MovieList() {
 
   return (
     <div>
+      <SearchBar />
       <section className="movie_wrapper">
         {movieData.map(movie => (
-          <MovieItem key={movie.id}  movie={movie} id={movie.id}/>
+          <MovieItem key={movie.id} movie={movie} id={movie.id} />
         ))}
       </section>
     </div>

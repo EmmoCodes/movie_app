@@ -1,0 +1,46 @@
+.search_bar {
+  position: relative;
+}
+
+.lens {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  border: none;
+  background-color: #fbf8ff;
+}
+
+.search_bar input {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding-block: 14px;
+  min-width: 23rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #fbf8ff;
+
+  &::placeholder {
+    padding-left: 1rem;
+    font-size: 16px;
+  }
+}
+
+.genre_buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.genre_buttons button {
+  padding-inline: 30px;
+  padding-block: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #fbf8ff;
+}
+
+.genre_buttons a.active button {
+  color: white;
+  background-color: #fc2121;
+}
