@@ -3,6 +3,11 @@
   background: linear-gradient(to bottom right, #fc2121, #ff6b6b);
   font-size: 22px;
   min-height: 100vh;
+
+  .logo {
+    max-width: 200px;
+    padding-bottom: 40px;
+  }
 }
 
 .login_inputs {
@@ -34,6 +39,8 @@
     rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px,
     rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  min-width: 50%;
+  font-size: 15px;
 }
 
 .login_pw {
@@ -43,22 +50,21 @@
 
 .login_pw a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.7);
   font-size: 13px;
 }
 
 .need_account {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 .socialmedia {
-  margin-block: 30px 50px;
+  margin-block: 30px;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
 .icon {
-  width: 30px;
-  color: #fff;
+  max-width: 30px;
 }

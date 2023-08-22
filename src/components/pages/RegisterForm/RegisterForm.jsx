@@ -1,11 +1,13 @@
 import React from 'react'
 import './RegisterForm.scss'
 import { Link } from 'react-router-dom'
+import logo from '../../../assets/img/njetflix.png'
 
 function RegisterForm() {
   return (
     <section className="register_page">
-      <h4>Create an Account</h4>
+      <img src={logo} alt="" className="logo" />
+      <p>Create an Account</p>
       <form className="register_inputs">
         <label htmlFor="email"></label>
         <input type="email" name="email" id="email" placeholder="E-Mail..." />
@@ -21,9 +23,6 @@ function RegisterForm() {
       <div className="register_buttons">
         <Link to="/home">
           <button type="button">Create</button>
-        </Link>
-        <Link to="/login">
-          <button type="button">Login</button>
         </Link>
       </div>
     </section>

@@ -61,9 +61,10 @@ function App() {
         </InputContext.Provider>
       </FilterContext.Provider>
 
-      {location.pathname !== '/' && location.pathname !== '/getstarted' && location.pathname !== '/login' && (
-        <NavbarMobile />
-      )}
+      {location.pathname !== '/' &&
+        location.pathname !== '/getstarted' &&
+        location.pathname !== '/login' &&
+        location.pathname !== '/register' && <NavbarMobile />}
     </>
   )
 }
