@@ -5,6 +5,7 @@ import MovieItem from '../../shared/MovieItem/MovieItem.jsx'
 import './MovieList.scss'
 import SearchBar from '../../shared/SearchBar/SearchBar.jsx'
 
+
 function MovieList() {
   const [movieData, setMovieData] = useState([])
   useEffect(() => {
@@ -15,6 +16,7 @@ function MovieList() {
     )
   }, [])
   // console.log(movieData)
+  console.log(movieData)
 
   return (
     <div>
