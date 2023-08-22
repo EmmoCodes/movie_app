@@ -34,9 +34,7 @@ function MovieItem({ movie }) {
             {movie.vote_average}
           </p>
           <p>{movie.release_date.slice(0, 4)}</p>
-          <p>· {movieDetails.genres[0].name}</p>
-          <p>· {movieDetails.genres[1]?.name}</p>
-          <p>· {movieDetails.genres[2]?.name}</p>
+          <p>· {movieDetails.genres.find(genre => genre.id === 27).name}</p>
           <p>{movieDetails.runtime} m</p>
         </div>
       </div>
