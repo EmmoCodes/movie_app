@@ -8,6 +8,9 @@ import GetStarted from './components/pages/GetStarted/GetStarted'
 import NavbarMobile from './components/shared/NavbarMobile/NavbarMobile'
 import MovieDetails from './components/pages/MovieDetails/MovieDetails'
 
+import NavbarMobile from './components/shared/NavbarMobile/NavbarMobile'
+
+
 function App() {
   const location = useLocation()
   return (
@@ -23,7 +26,6 @@ function App() {
       {location.pathname !== '/' && location.pathname !== '/getstarted' && location.pathname !== '/login' && (
         <NavbarMobile />
       )}
-
     </>
   )
 }
