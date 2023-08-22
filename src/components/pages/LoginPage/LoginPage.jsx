@@ -18,8 +18,11 @@ function LoginPage() {
         <label htmlFor="password"></label>
         <input type="text" name="password" id="password" placeholder="Password..." />
       </form>
+
       <Link to="/home">
         <button>Create</button>
+    </Link>
+
         <button>Login</button>
       </Link>
     </section>
