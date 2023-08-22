@@ -1,0 +1,29 @@
+.details_wrapper {
+  display: flex;
+  flex-direction: column;
+  a {
+    position: absolute;
+    z-index: 1;
+  }
+  img {
+    min-height: 400px;
+    object-fit: cover;
+    mask-image: linear-gradient(to top, transparent, black 45%);
+    -webkit-mask-image: linear-gradient(to top, transparent, black 45%);
+  }
+  .relativ_headline {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    p {
+      text-align: center;
+    }
+    h1 {
+      text-align: center;
+    }
+  }
+  .date_duration_genre {
+    display: flex;
+  }
+}

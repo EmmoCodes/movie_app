@@ -31,7 +31,7 @@ function MovieItem({ movie }) {
         </div>
         <div className="frame_text_info">
           <p>
-            <img src={star} alt="Star Icon" />
+            <span className="imdb"></span>
             {movie.vote_average}
             <img src={punkt} alt="Punkt Icon" className="punkt" />
           </p>
