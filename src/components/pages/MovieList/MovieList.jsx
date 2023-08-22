@@ -4,20 +4,38 @@ import { apiKey } from '../../../data/api'
 import MovieItem from '../../shared/MovieItem/MovieItem.jsx'
 import './MovieList.scss'
 import SearchBar from '../../shared/SearchBar/SearchBar.jsx'
-import { FilterContext } from '../../utils/FilterContext/FilterContext.jsx'
+import { FilterContext } from '../../utils/Contexts/FilterContext.jsx'
+import { InputContext } from '../../utils/Contexts/InputContext.jsx'
+import { MovieContext } from '../../utils/Contexts/MovieContext.jsx'
 
 function MovieList() {
-  const [movieData, setMovieData] = useState([])
+  const { movieData, setMovieData } = useContext(MovieContext)
+  const [loading, setLoading] = useState(false)
 
   const { genreValue } = useContext(FilterContext)
+  const { inputSearch, handleSearch } = useContext(InputContext)
 
   useEffect(() => {
+    setLoading(true)
+
     getAllMovies(
       ` https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genreValue}&api_key=${apiKey}`,
       setMovieData,
       'results',
     )
+    const searchTimeout = setTimeout(() => {
+      if (inputSearch !== undefined) {
+        handleSearch()
+      }
+    }, 300)
+    clearTimeout(searchTimeout)
+
+    setLoading(false)
   }, [genreValue])
+
+  if (loading === true) {
+    return <p>Is Loading....</p>
+  }
 
   return (
     <>

@@ -5,7 +5,7 @@ import punkt from '../../../assets/img/Ellipse.svg'
 import { Link } from 'react-router-dom'
 import { apiKey } from '../../../data/api.js'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
-import { FilterContext } from '../../utils/FilterContext/FilterContext.jsx'
+import { FilterContext } from '../../utils/Contexts/FilterContext.jsx'
 
 function MovieItem({ movie }) {
   const [movieId, setMovieId] = useState(movie.id)

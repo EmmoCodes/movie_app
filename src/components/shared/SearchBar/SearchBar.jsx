@@ -1,53 +1,33 @@
 import React, { useContext } from 'react'
 import '../SearchBar/SearchBar.scss'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import lens from '../../../assets/img/vector.svg'
-import { Link, NavLink } from 'react-router-dom'
-import { FilterContext } from '../../utils/FilterContext/FilterContext.jsx'
-import { apiKey } from '../../../data/api'
-import { getAllMovies } from '../../utils/fetches/movieFetch'
+import { FilterContext } from '../../utils/Contexts/FilterContext.jsx'
+import { InputContext, InputValueContext } from '../../utils/Contexts/InputContext.jsx'
 
 function SearchBar() {
   const { handleGenreSearch } = useContext(FilterContext)
-  const [searchInput, setSearchInput] = useState('')
-  const [results, setResults] = useState([])
+  const { handleInputSearch, handleSearch, inputSearch } = useContext(InputContext)
+  const { inputValue } = useContext(InputValueContext)
 
-  useEffect(() => {
-    if (searchInput !== ' ') {
-      getAllMovies(
-        `https://api.themoviedb.org/3/search/movie?query=${searchInput}&include_adult=false&language=en-US&page=1&api_key=${apiKey}`,
-        setResults,
-      )
-    }
-  }, [searchInput])
-  console.log(results)
-
-  const handleSearch = event => {
-    event.preventDefault()
-    if (searchInput === '') return
-    getAllMovies(
-      `https://api.themoviedb.org/3/search/movie?query=${searchInput}&include_adult=false&language=en-US&page=1&api_key=${apiKey}`,
-      setResults,
-    )
-    console.log(results)
-  }
   return (
     <section className="searchbar_wrapper">
       <div className="search_bar">
-        <form onSubmit={handleSearch}>
+        <div>
           <label htmlFor="search"></label>
           <input
             type="text"
-            value={searchInput}
             name="search"
             id="search"
             placeholder="Search Movie..."
-            onChange={event => setSearchInput(event.target.value)}
+            onChange={handleInputSearch}
+            defaultValue={inputValue}
           />
-          <button className="lens" type="submit">
+          <button className="lens" type="button" onClick={handleSearch}>
             <img src={lens} alt="" />
           </button>
-        </form>
+        </div>
       </div>
       <div className="genre_buttons">
         <NavLink to="/list" className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}>
