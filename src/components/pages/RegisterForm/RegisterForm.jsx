@@ -20,7 +20,7 @@ function RegisterForm() {
       </form>
       <div className="register_buttons">
         <Link to="/home">
-          <button>Create</button>
+          <button type="button">Create</button>
         </Link>
         <Link to="/login">
           <button type="button">Login</button>

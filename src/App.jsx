@@ -9,7 +9,11 @@ import GetStarted from './components/pages/GetStarted/GetStarted'
 import NavbarMobile from './components/shared/NavbarMobile/NavbarMobile'
 import MovieDetails from './components/pages/MovieDetails/MovieDetails'
 import SearchBar from './components/shared/SearchBar/SearchBar'
+
+import LoginForm from './components/pages/LoginForm/LoginForm'
+
 import { FilterContext } from './components/utils/FilterContext/FilterContext.jsx'
+
 
 function App() {
   const location = useLocation()
@@ -21,6 +25,7 @@ function App() {
 
   return (
     <>
+
       <FilterContext.Provider value={{ genreValue, handleGenreSearch }}>
         <Routes>
           <Route path="/home" element={<Home />} />
@@ -29,9 +34,10 @@ function App() {
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/list" element={<MovieList />} />
           <Route path="/details/:id" element={<MovieDetails />} />
-          <Route path="/search" element={<SearchBar />} />
+             <Route path="/login" element={<LoginForm />} />
         </Routes>
       </FilterContext.Provider>
+
       {location.pathname !== '/' && location.pathname !== '/getstarted' && location.pathname !== '/login' && (
         <NavbarMobile />
       )}
