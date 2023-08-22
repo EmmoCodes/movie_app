@@ -1,55 +1,68 @@
 .details_wrapper {
   display: flex;
   flex-direction: column;
+  height: 95vh;
+
   a {
     position: absolute;
     z-index: 1;
     top: 20px;
     left: 20px;
+
     div {
       background-color: #fff;
       padding: 10px 5px;
       border-radius: 11px;
+
       img {
         min-width: 19px;
         min-height: 9px;
       }
     }
   }
+
   a:hover {
     cursor: pointer;
   }
+
   .mainimg {
     min-height: 400px;
     object-fit: cover;
     mask-image: linear-gradient(to top, transparent, black 45%);
     -webkit-mask-image: linear-gradient(to top, transparent, black 45%);
   }
+
   .relativ_headline {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+
     p {
       text-align: center;
     }
+
     h1 {
       text-align: center;
     }
+
     .date_duration_genre {
       display: flex;
       justify-content: center;
     }
   }
+
   .overview_wrapper {
     padding-left: 20px;
     padding-right: 20px;
+
     h2 {
       font-size: 20px;
       margin-bottom: 19px;
     }
   }
+
   .genre_box {
     padding-left: 20px;
     padding-right: 20px;
@@ -57,13 +70,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     .genre_name {
       display: flex;
+
       p {
         margin-left: 5px;
       }
     }
   }
+
   .language_box {
     padding-left: 20px;
     padding-right: 20px;
@@ -71,13 +87,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     .languages {
       display: flex;
+
       p {
         margin-left: 5px;
       }
     }
   }
+
   .watch_movie_button {
     color: #fff;
     border-radius: 10px;
@@ -85,11 +104,10 @@
     padding: 15px 35px;
     max-width: 30%;
     border: none;
-    box-shadow:
-      rgba(0, 0, 0, 0.25) 0px 54px 64px,
-      rgba(0, 0, 0, 0.12) 0px -12px 30px,
-      rgba(0, 0, 0, 0.12) 0px 4px 6px,
-      rgba(0, 0, 0, 0.17) 0px 12px 13px,
-      rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 64px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
 }
