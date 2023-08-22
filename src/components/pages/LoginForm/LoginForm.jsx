@@ -1,14 +1,16 @@
 import React from 'react'
 import '../LoginForm/LoginForm.scss'
 import { Link } from 'react-router-dom'
-import google from '../../../assets/img/google.png'
-import facebook from '../../../assets/img/facebook.png'
-import twitter from '../../../assets/img/twitter.png'
+import google from '../../../assets/img/google.svg'
+import facebook from '../../../assets/img/facebook.svg'
+import twitter from '../../../assets/img/twitter.svg'
+import logo from '../../../assets/img/njetflix.png'
 
 function LoginForm() {
   return (
     <section className="login_form">
-      <h4>Login</h4>
+      <img src={logo} alt="" className="logo" />
+      <p>Login</p>
       <form className="login_inputs">
         <label htmlFor="username_email"></label>
         <input type="text" name="username" id="username" placeholder="Username or Email..." />
