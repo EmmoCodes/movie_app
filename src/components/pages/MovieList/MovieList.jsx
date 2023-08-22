@@ -3,6 +3,7 @@ import { getAllMovies } from '../../utils/fetches/movieFetch.js'
 import { apiKey } from '../../../data/api'
 import MovieItem from '../../shared/MovieItem/MovieItem.jsx'
 
+
 function MovieList() {
   const [movieData, setMovieData] = useState([])
   useEffect(() => {
@@ -12,13 +13,13 @@ function MovieList() {
       'results',
     )
   }, [])
-  console.log(movieData)
+  // console.log(movieData)
 
   return (
     <div>
       <section className="movie_wrapper">
         {movieData.map(movie => (
-          <MovieItem key={movie.id} movie={movie} />
+          <MovieItem key={movie.id}  movie={movie} id={movie.id}/>
         ))}
       </section>
     </div>

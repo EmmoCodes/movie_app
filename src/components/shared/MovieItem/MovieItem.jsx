@@ -11,7 +11,7 @@ function MovieItem({ movie }) {
     getAllMovies(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`, setMovieDetails)
   }, [])
 
-  console.log(movieDetails)
+  // console.log(movieDetails)
 
   if (!movieDetails.id) {
     return <p>Is Loading...</p>
@@ -19,7 +19,7 @@ function MovieItem({ movie }) {
 
   return (
     <div className="movie_frame">
-      <Link to="/details">
+      <Link to={`/details/${movie.id}`}>
         <img src={`https://image.tmdb.org/t/p/w200${movie.backdrop_path}`} alt="" />
       </Link>
       <h1>{movie.title}</h1>
