@@ -8,6 +8,7 @@ import GetStarted from './components/pages/GetStarted/GetStarted'
 import NavbarMobile from './components/shared/NavbarMobile/NavbarMobile'
 import MovieDetails from './components/pages/MovieDetails/MovieDetails'
 import SearchBar from './components/shared/SearchBar/SearchBar'
+import LoginForm from './components/pages/LoginForm/LoginForm'
 
 function App() {
   const location = useLocation()
@@ -21,6 +22,7 @@ function App() {
         <Route path="/list" element={<MovieList />} />
         <Route path="/details/:id" element={<MovieDetails />} />
         <Route path="/search" element={<SearchBar />} />
+        <Route path="/login" element={<LoginForm />} />
       </Routes>
       {location.pathname !== '/' && location.pathname !== '/getstarted' && location.pathname !== '/login' && (
         <NavbarMobile />
