@@ -42,24 +42,29 @@
     p {
       text-align: center;
     }
-
     h1 {
       text-align: center;
+      margin-bottom: 10px;
     }
 
     .date_duration_genre {
       display: flex;
       justify-content: center;
+      column-gap: 10px;
     }
   }
 
   .overview_wrapper {
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 20px;
 
     h2 {
       font-size: 20px;
       margin-bottom: 19px;
+    }
+    .see_more {
+      color: #fc2121;
     }
   }
 
@@ -97,17 +102,25 @@
     }
   }
 
-  .watch_movie_button {
-    color: #fff;
-    border-radius: 10px;
-    background: #fc2121;
-    padding: 15px 35px;
-    max-width: 30%;
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 64px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px,
-    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  .buttonbox {
+    margin-top: 30px;
+    text-align: center;
+    .watch_movie_button {
+      margin-bottom: 50px;
+      padding-inline: 50px;
+      padding-block: 16px;
+      background-color: #fc2121;
+      border-radius: 10px;
+      border: none;
+      color: #fff;
+      box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 54px 64px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      min-width: 50%;
+      font-size: 15px;
+    }
   }
 }

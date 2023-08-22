@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom'
 import { apiKey } from '../../../data/api.js'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
 import button from '../../../assets/img/backbuttondetails.svg'
+import punkt from '../../../assets/img/Ellipse.svg'
+import start from '../../../assets/img/polygon.svg'
 import './MovieDetails.scss'
 const MovieDetails = () => {
   const [movieDetail, setMovieDetail] = useState({})
@@ -29,16 +31,21 @@ const MovieDetails = () => {
         <p>Movie Details</p>
         <h1>{movieDetail.title}</h1>
         <div className="date_duration_genre">
+          <img src={start} alt="star Icon" />
           <p>{movieDetail.vote_average}</p>
+          <img src={punkt} alt="punkt Icon" />
           <p>{movieDetail.release_date}</p>
+          <img src={punkt} alt="punkt Icon" />
           <p>{movieDetail.genres[0].name}</p>
+          <img src={punkt} alt="punkt Icon" />
           <p>{movieDetail.runtime} min</p>
         </div>
       </div>
 
       <div className="overview_wrapper">
         <h2>Overview</h2>
-        <p>{movieDetail.overview}</p>
+        <p>{movieDetail.overview.slice(0, 150)}</p>
+        <span className="see_more">See more</span>
       </div>
 
       <div className="genre_box">
