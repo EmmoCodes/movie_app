@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { apiKey } from '../../../data/api.js'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
-
+import './MovieDetails.scss'
 const MovieDetails = () => {
   const [movieDetail, setMovieDetail] = useState({})
   const params = useParams()
@@ -17,13 +17,13 @@ const MovieDetails = () => {
 
   return (
     <div className="details_wrapper">
- 
+      <Link to="/list"> Back </Link>
 
-        <Link to="/list"> Back </Link>
-   
       <img src={`https://image.tmdb.org/t/p/w500${movieDetail.backdrop_path}`} alt="Photo" />
-      <h3>Movie Details</h3>
-      <h1>{movieDetail.title}</h1>
+      <div className="relativ_headline">
+        <p>Movie Details</p>
+        <h1>{movieDetail.title}</h1>
+      </div>
       <div className="date_duration_genre">
         <p>{movieDetail.vote_average}</p>
         <p>{movieDetail.release_date}</p>
