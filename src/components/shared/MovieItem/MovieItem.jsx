@@ -1,24 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import star from '../../../assets/img/polygon.svg'
 import bookmark from '../../../assets/img/bookmark.svg'
 import punkt from '../../../assets/img/Ellipse.svg'
 import { Link } from 'react-router-dom'
 import { apiKey } from '../../../data/api.js'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
+import { FilterContext } from '../../utils/FilterContext/FilterContext.jsx'
 
 function MovieItem({ movie }) {
   const [movieId, setMovieId] = useState(movie.id)
   const [movieDetails, setMovieDetails] = useState({})
+  const [loading, setLoading] = useState(true)
+
+  const { genreValue } = useContext(FilterContext)
 
   useEffect(() => {
-    getAllMovies(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`, setMovieDetails)
-  }, [])
+    setLoading(true)
+    getAllMovies(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`, setMovieDetails).then(() => {
+      setLoading(false)
+    })
+  }, [genreValue])
 
-  // console.log(movieDetails)
-
-  if (!movieDetails.id) {
+  if (loading === true) {
     return <p>Is Loading...</p>
   }
+
   return (
     <div className="movie_frame">
       <Link to={`/details/${movie.id}`}>
@@ -40,7 +46,7 @@ function MovieItem({ movie }) {
             <img src={punkt} alt="Punkt Icon" className="punkt" />
           </p>
           <p>
-            {movieDetails.genres.find(genre => genre.id === 27).name}
+            {movieDetails.genres.find(genre => genre.id === Number(genreValue))?.name}
             <img src={punkt} alt="Punkt Icon" className="punkt" />
           </p>
           <p>{movieDetails.runtime} m</p>
