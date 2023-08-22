@@ -9,7 +9,9 @@ import { FilterContext } from '../../utils/FilterContext/FilterContext.jsx'
 function MovieList() {
   const [movieData, setMovieData] = useState([])
 
+
   const { genreValue } = useContext(FilterContext)
+
 
   useEffect(() => {
     getAllMovies(
