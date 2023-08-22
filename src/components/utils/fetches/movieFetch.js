@@ -1,5 +1,5 @@
 export const getAllMovies = (apiKey, setState, key) => {
-  fetch(apiKey)
+  return fetch(apiKey)
     .then(response => {
       if (!response.ok) {
         throw new Error('something went wrong with fetch')
