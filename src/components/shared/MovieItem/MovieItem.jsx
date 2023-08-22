@@ -19,10 +19,8 @@ function MovieItem({ movie }) {
     return <p>Is Loading...</p>
   }
   return (
-
     <div className="movie_frame">
       <Link to={`/details/${movie.id}`}>
-
         <img src={`https://image.tmdb.org/t/p/w200${movie.backdrop_path}`} alt="" />
       </Link>
       <div className="movie_frame_text">
@@ -40,7 +38,7 @@ function MovieItem({ movie }) {
           <p>{movieDetails.runtime} m</p>
         </div>
       </div>
-    </article>
+    </div>
   )
 }
 
