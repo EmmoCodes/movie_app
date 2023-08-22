@@ -21,7 +21,7 @@ function MovieItem({ movie }) {
   return (
     <div className="movie_frame">
       <Link to={`/details/${movie.id}`}>
-        <img src={`https://image.tmdb.org/t/p/w200${movie.backdrop_path}`} alt="" />
+        <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt="" />
       </Link>
       <div className="movie_frame_text">
         <div className="frame_text_headline">
