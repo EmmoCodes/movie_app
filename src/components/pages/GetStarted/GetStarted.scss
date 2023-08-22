@@ -1,3 +1,7 @@
+@font-face {
+  font-family: headline2;
+  src: url('../../../assets/fonts/Poppins/Poppins-SemiBold.ttf');
+}
 section {
   text-align: center;
 }
@@ -17,7 +21,6 @@ section {
   min-height: 60vh;
   background: linear-gradient(to bottom right, #fc2121, #ff6b6b);
   overflow: hidden;
-
 }
 
 .get_started_img img:first-child {
@@ -31,13 +34,13 @@ section {
   top: 10px;
 }
 
-
 .get_started_text {
   h1 {
     padding-top: 50px;
     padding-inline: 40px;
     padding-bottom: 24px;
     font-size: 28px;
+    font-family: headline2;
   }
 
   p {

@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: mainfont;
-  src: url('./assets/fonts/Poppins/Poppins-Bold.ttf');
+  src: url('./assets/fonts/Poppins/Poppins-Medium.ttf');
 }
 
 @font-face {
@@ -21,11 +21,15 @@ h4,
 h5,
 h6 {
   font-family: mainfont;
+  font-size: 22px;
 }
 
 p {
   font-family: paragraph;
 }
 li {
+  font-family: paragraph;
+}
+span {
   font-family: paragraph;
 }
