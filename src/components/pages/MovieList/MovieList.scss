@@ -7,8 +7,8 @@
     display: flex;
     column-gap: 15px;
     a {
-      max-width: 25%;
-      max-height: 8rem;
+      min-width: 25%;
+      min-height: 8rem;
 
       img {
         display: block;
