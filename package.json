@@ -10,11 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rcaferati/wac": "^1.0.0",
     "animate.css": "^4.1.1",
+    "carousel": "^0.0.3",
     "react": "^18.2.0",
+    "react-awesome-slider": "^4.1.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
-    "sass": "^1.66.1"
+    "react-slick": "^0.29.0",
+    "sass": "^1.66.1",
+    "slick": "^1.12.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -30,6 +35,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "prettier": "3.0.2",
+    "style-loader": "^3.3.3",
     "vite": "^4.4.5"
   }
 }
