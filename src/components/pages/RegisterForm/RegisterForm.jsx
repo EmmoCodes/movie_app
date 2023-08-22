@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 function RegisterForm() {
   return (
-    <section className="login_page">
+    <section className="register_page">
       <h4>Create an Account</h4>
-      <form className="login_inputs">
+      <form className="register_inputs">
         <label htmlFor="email"></label>
         <input type="email" name="email" id="email" placeholder="E-Mail..." />
         <label htmlFor="username"></label>
@@ -18,14 +18,14 @@ function RegisterForm() {
         <label htmlFor="password"></label>
         <input type="text" name="password" id="password" placeholder="Password..." />
       </form>
-
-      <Link to="/home">
-        <button>Create</button>
-      </Link>
-
-      <Link to="/login">
-        <button type="button">Login</button>
-      </Link>
+      <div className="register_buttons">
+        <Link to="/home">
+          <button>Create</button>
+        </Link>
+        <Link to="/login">
+          <button type="button">Login</button>
+        </Link>
+      </div>
     </section>
   )
 }
