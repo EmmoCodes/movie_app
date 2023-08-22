@@ -4,20 +4,25 @@ import { Link } from 'react-router-dom'
 
 function LoginPage() {
   return (
-    <section className="login_form">
+    <section className="login_page">
+      <h4>Create an Account</h4>
       <form className="login_inputs">
-        <label htmlFor="email">Your E-Mail</label>
+        <label htmlFor="email"></label>
         <input type="email" name="email" id="email" placeholder="E-Mail..." />
-        <label htmlFor="username">Your User-Name</label>
+        <label htmlFor="username"></label>
         <input type="text" name="username" id="username" placeholder="Username..." />
-        <label htmlFor="firstname">Your First Name</label>
+        <label htmlFor="firstname"></label>
         <input type="text" name="firstname" id="firstname" placeholder="Firstname..." />
-        <label htmlFor="lastname">Your Last Name</label>
+        <label htmlFor="lastname"></label>
         <input type="text" name="lastname" id="lastname" placeholder="Lastname..." />
-        <label htmlFor="password">Your Password</label>
+        <label htmlFor="password"></label>
         <input type="text" name="password" id="password" placeholder="Password..." />
       </form>
-      <Link to={'./home'}>
+
+      <Link to="/home">
+        <button>Create</button>
+    </Link>
+
         <button>Login</button>
       </Link>
     </section>
