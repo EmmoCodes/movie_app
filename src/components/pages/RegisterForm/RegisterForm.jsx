@@ -1,8 +1,8 @@
 import React from 'react'
-import '../LoginPage/LoginPage.scss'
+import './RegisterForm.scss'
 import { Link } from 'react-router-dom'
 
-function LoginPage() {
+function RegisterForm() {
   return (
     <section className="login_page">
       <h4>Create an Account</h4>
@@ -21,12 +21,13 @@ function LoginPage() {
 
       <Link to="/home">
         <button>Create</button>
-    </Link>
+      </Link>
 
-        <button>Login</button>
+      <Link to="/login">
+        <button type="button">Login</button>
       </Link>
     </section>
   )
 }
 
-export default LoginPage
+export default RegisterForm
