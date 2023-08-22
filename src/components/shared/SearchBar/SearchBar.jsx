@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../SearchBar/SearchBar.scss'
 import lens from '../../../assets/img/vector.svg'
 import { Link, NavLink } from 'react-router-dom'
+import { FilterContext } from '../../utils/FilterContext/FilterContext.jsx'
 
 function SearchBar() {
+  const { handleGenreSearch } = useContext(FilterContext)
+
   return (
-    <section>
+    <section className="searchbar_wrapper">
       <div className="search_bar">
         <form>
           <label htmlFor="search"></label>
@@ -17,13 +20,19 @@ function SearchBar() {
       </div>
       <div className="genre_buttons">
         <NavLink to="/list" className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}>
-          <button>Action</button>
+          <button value="28" onClick={handleGenreSearch}>
+            Action
+          </button>
         </NavLink>
         <NavLink to="/list" className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}>
-          <button>Comedy</button>
+          <button value="35" onClick={handleGenreSearch}>
+            Comedy
+          </button>
         </NavLink>
         <NavLink to="/list" className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}>
-          <button>Horror</button>
+          <button value="27" onClick={handleGenreSearch}>
+            Horror
+          </button>
         </NavLink>
       </div>
     </section>
