@@ -14,7 +14,6 @@ import LoginForm from './components/pages/LoginForm/LoginForm'
 
 import { FilterContext } from './components/utils/FilterContext/FilterContext.jsx'
 
-
 function App() {
   const location = useLocation()
   const [genreValue, setGenreValue] = useState('27')
@@ -25,7 +24,6 @@ function App() {
 
   return (
     <>
-
       <FilterContext.Provider value={{ genreValue, handleGenreSearch }}>
         <Routes>
           <Route path="/home" element={<Home />} />
@@ -34,7 +32,7 @@ function App() {
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/list" element={<MovieList />} />
           <Route path="/details/:id" element={<MovieDetails />} />
-             <Route path="/login" element={<LoginForm />} />
+          <Route path="/login" element={<LoginForm />} />
         </Routes>
       </FilterContext.Provider>
 

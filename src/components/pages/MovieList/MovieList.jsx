@@ -9,9 +9,7 @@ import { FilterContext } from '../../utils/FilterContext/FilterContext.jsx'
 function MovieList() {
   const [movieData, setMovieData] = useState([])
 
-
   const { genreValue } = useContext(FilterContext)
-
 
   useEffect(() => {
     getAllMovies(
@@ -22,14 +20,16 @@ function MovieList() {
   }, [genreValue])
 
   return (
-    <div>
+    <>
       <SearchBar />
-      <section className="movie_wrapper">
-        {movieData.map(movie => (
-          <MovieItem key={movie.id} movie={movie} id={movie.id} />
-        ))}
-      </section>
-    </div>
+      <div>
+        <section className="movie_wrapper">
+          {movieData.map(movie => (
+            <MovieItem key={movie.id} movie={movie} id={movie.id} />
+          ))}
+        </section>
+      </div>
+    </>
   )
 }
 
