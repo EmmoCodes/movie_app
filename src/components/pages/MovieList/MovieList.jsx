@@ -39,9 +39,9 @@ function MovieList() {
 
   return (
     <>
-      <SearchBar />
       <div>
         <section className="movie_wrapper">
+          <SearchBar />
           {movieData.map(movie => (
             <MovieItem key={movie.id} movie={movie} id={movie.id} />
           ))}

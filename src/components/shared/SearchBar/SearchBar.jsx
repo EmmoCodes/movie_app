@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import '../SearchBar/SearchBar.scss'
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import lens from '../../../assets/img/vector.svg'
 import { FilterContext } from '../../utils/Contexts/FilterContext.jsx'
 import { InputContext, InputValueContext } from '../../utils/Contexts/InputContext.jsx'
@@ -10,6 +10,7 @@ function SearchBar() {
   const { handleGenreSearch } = useContext(FilterContext)
   const { handleInputSearch, handleSearch, inputSearch } = useContext(InputContext)
   const { inputValue } = useContext(InputValueContext)
+  const location = useLocation()
 
   return (
     <section className="searchbar_wrapper">
@@ -29,23 +30,41 @@ function SearchBar() {
           </button>
         </div>
       </div>
-      <div className="genre_buttons">
-        <NavLink to="/list" className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}>
-          <button type="button" value="28" onClick={handleGenreSearch}>
-            Action
-          </button>
-        </NavLink>
-        <NavLink to="/list" className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}>
-          <button value="35" onClick={handleGenreSearch}>
-            Comedy
-          </button>
-        </NavLink>
-        <NavLink to="/list" className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}>
-          <button value="27" onClick={handleGenreSearch}>
-            Horror
-          </button>
-        </NavLink>
-      </div>
+
+      {location.pathname !== '/home' ? (
+        <div className="genre_buttons">
+          <NavLink
+            to="/list"
+            className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}>
+            <button type="button" value="28" onClick={handleGenreSearch}>
+              Action
+            </button>
+          </NavLink>
+          <NavLink
+            to="/list"
+            className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}>
+            <button value="35" onClick={handleGenreSearch}>
+              Comedy
+            </button>
+          </NavLink>
+          <NavLink
+            to="/list"
+            className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}>
+            <button value="27" onClick={handleGenreSearch}>
+              Horror
+            </button>
+          </NavLink>
+        </div>
+      ) : null}
+      {location.pathname === '/home' ? (
+        <div>
+          <NavLink to="/list">
+            <button className="movie_list_button" type="button">
+              Movie List
+            </button>
+          </NavLink>
+        </div>
+      ) : null}
     </section>
   )
 }

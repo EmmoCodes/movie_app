@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 function GetStarted() {
   return (
-    <section>
+    <section className="get_started">
       <div className="img_background">
         <div className="get_started_img">
           <img src={getStartedImg2} alt="" />
