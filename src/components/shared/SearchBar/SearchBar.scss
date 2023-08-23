@@ -88,9 +88,9 @@
 }
 
 .close_button {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
+  padding-inline: 10px;
+  padding-block: 2px;
+  border-radius: 8px;
   font-size: 1rem;
   position: absolute;
   bottom: 545px;
