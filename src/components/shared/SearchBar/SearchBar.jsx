@@ -27,9 +27,10 @@ function SearchBar() {
     clearTimeout(searchTimeout)
   }, [inputSearch])
 
-  console.log(movieData)
+
   return (
     <>
+   
       <section className="searchbar_wrapper">
         <div className="search_bar">
           <div>
@@ -50,8 +51,7 @@ function SearchBar() {
             </button>
           </div>
         </div>
-
-        {location.pathname !== '/home' ? (
+         {location.pathname !== '/home' && location.pathname !== '/popular' ? (
           <div className="genre_buttons">
             <NavLink
               to="/list"
@@ -76,15 +76,16 @@ function SearchBar() {
             </NavLink>
           </div>
         ) : null}
-        {location.pathname === '/home' ? (
-          <div className="movie_list_buttoncontainer">
-            <NavLink to="/list">
-              <button type="button" className="movie_list_button">
-                Browse all
-              </button>
-            </NavLink>
-          </div>
-        ) : null}
+        
+        {location.pathname === '/home' || location.pathname === '/popular' ? (
+        <div className="movie_list_buttoncontainer">
+          <NavLink to="/list">
+            <button type="button" className="movie_list_button">
+              Browse all
+            </button>
+          </NavLink>
+        </div>
+      ) : null}
       </section>
       <button
         className={searchFrame ? 'show close_button' : 'hide'}
@@ -99,6 +100,7 @@ function SearchBar() {
         ))}
       </section>
     </>
+
   )
 }
 
