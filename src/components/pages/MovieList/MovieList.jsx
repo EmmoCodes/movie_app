@@ -39,7 +39,20 @@ function MovieList() {
   }
 
   const sortAscending = () => {
-    movieData.sort((a, b) => {
+    const sortedData = [...movieData].sort((a, b) => {
+      if (a.title < b.title) {
+        return -1
+      }
+      if (a.title > b.title) {
+        return 1
+      }
+      return 0
+    })
+    setMovieData(sortedData)
+  }
+
+  const sortDescending = () => {
+    const sortedData = [...movieData].sort((a, b) => {
       if (a.title > b.title) {
         return -1
       }
@@ -48,6 +61,7 @@ function MovieList() {
       }
       return 0
     })
+    setMovieData(sortedData)
   }
 
   return (
@@ -58,14 +72,15 @@ function MovieList() {
           <button type="button" className="sort_button" onClick={sortAscending}>
             Sort: A-Z
           </button>
-          <button type="button" className="sort_button">
+          <button type="button" className="sort_button" onClick={sortDescending}>
             Sort Z-A
           </button>
         </article>
-
-        {movieData.map(movie => (
-          <MovieItem key={movie.id} movie={movie} id={movie.id} />
-        ))}
+        <article className="item_wrapper">
+          {movieData.map(movie => (
+            <MovieItem key={movie.id} movie={movie} id={movie.id} />
+          ))}
+        </article>
 
         <div className="scroll_to_topbutton" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <img src={button} alt="button icon" />

@@ -30,7 +30,7 @@
 
   .relativ_headline {
     position: absolute;
-    top: 40%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
@@ -124,6 +124,46 @@
         rgba(0, 0, 0, 0.09) 0px -3px 5px;
       min-width: 50%;
       font-size: 15px;
+    }
+  }
+}
+@media screen and (min-width: 391px) {
+  .details_wrapper {
+    flex-direction: row;
+    justify-content: center;
+    .mainimg {
+      max-width: 400px;
+    }
+    .backbutton {
+      left: 120px;
+    }
+    .relativ_headline {
+      width: 30%;
+      left: 21%;
+      top: 82%;
+    }
+    .overview_wrapper {
+      max-width: 500px;
+      padding-top: 150px;
+    }
+    .genre_box {
+      margin-top: 150px;
+      display: inline-block;
+      .genre_name {
+        display: inline-block;
+      }
+    }
+    .language_box {
+      margin-top: 150px;
+      display: inline-block;
+      .languages {
+        flex-direction: column;
+      }
+    }
+    .buttonbox {
+      position: absolute;
+      left: 700px;
+      bottom: 50px;
     }
   }
 }

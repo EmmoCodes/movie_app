@@ -6,6 +6,7 @@ import { getAllMovies } from '../../utils/fetches/movieFetch.js'
 import { apiKey } from '../../../data/api.js'
 import SearchBar from '../../shared/SearchBar/SearchBar.jsx'
 import MovieItem from '../../shared/MovieItem/MovieItem.jsx'
+import button from '../../../assets/img/backbuttondetails.svg'
 
 function PopularList() {
   const { movieData, setMovieData } = useContext(MovieContext)
@@ -40,9 +41,14 @@ function PopularList() {
     <>
       <section className="movie_wrapper">
         <SearchBar />
-        {movieData.map(movie => (
-          <MovieItem key={movie.id} movie={movie} id={movie.id} />
-        ))}
+        <article className="item_wrapper">
+          {movieData.map(movie => (
+            <MovieItem key={movie.id} movie={movie} id={movie.id} />
+          ))}
+        </article>
+        <div className="scroll_to_topbutton" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <img src={button} alt="button icon" />
+        </div>
       </section>
     </>
   )

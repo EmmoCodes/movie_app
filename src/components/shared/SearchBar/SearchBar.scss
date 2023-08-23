@@ -20,7 +20,6 @@
   background-color: #fbf8ff;
   padding-left: 1rem;
   font-size: 1rem;
-
 }
 
 .genre_buttons {
@@ -98,4 +97,13 @@
   border: none;
   color: white;
   background: linear-gradient(to right, #fc2121, #ff6b6b);
+}
+
+@media screen and (min-width: 391px) {
+  .close_button {
+    bottom: 430px;
+  }
+  .searched_movie_frame {
+    height: 374px;
+  }
 }

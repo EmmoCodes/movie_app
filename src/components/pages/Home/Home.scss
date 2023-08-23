@@ -20,6 +20,9 @@
 }
 
 .slider_wrapper {
+  a {
+    color: #fff;
+  }
   max-width: 400px;
   margin-bottom: 8rem;
 
@@ -36,9 +39,7 @@
       left: 20px;
       font-size: 16px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
     }
-
 
     img {
       width: auto;
@@ -92,5 +93,35 @@
 
   span {
     color: #fc2121;
+  }
+}
+@media screen and (min-width: 391px) {
+  .searchbar_wrapper {
+    max-width: 360px;
+    .movie_list_buttoncontainer {
+      justify-content: normal;
+    }
+    .lens {
+      top: 40px;
+    }
+    .search_bar input {
+      margin-top: 20px;
+    }
+  }
+  .trending {
+    margin-top: 10px;
+    justify-content: normal;
+    h2 {
+      margin-right: 340px;
+    }
+  }
+  .slider_wrapper {
+    max-width: 654px;
+    div:nth-of-type(1) img {
+      height: 105%;
+    }
+  }
+  .navbarmobilesection {
+    z-index: 2;
   }
 }

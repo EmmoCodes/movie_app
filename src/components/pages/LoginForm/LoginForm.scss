@@ -67,3 +67,16 @@
 .icon {
   max-width: 30px;
 }
+@media screen and (min-width: 391px) {
+  .login_inputs {
+    max-width: 25%;
+    margin-inline: auto;
+    margin-block: 20px;
+  }
+  .login_form button {
+    min-width: 25%;
+  }
+  .need_account {
+    margin-top: 50px;
+  }
+}
