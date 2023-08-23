@@ -8,7 +8,6 @@ import './Home.scss'
 import SearchBar from '../../shared/SearchBar/SearchBar.jsx'
 import star from '../../../assets/img/polygon.svg'
 
-
 function Home() {
   const [popularMovies, setPopularMovies] = useState([])
   const [randomMovies, setRandomMovies] = useState([])
@@ -44,11 +43,13 @@ function Home() {
             <AwesomeSlider className="aws_btn">
               {randomMovies.map(movie => (
                 <div key={movie.id}>
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                    alt="photos"
-                    key={movie.backdrop_path}
-                  />
+                  <Link to={`/details/${movie.id}`}>
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                      alt="photos"
+                      key={movie.backdrop_path}
+                    />
+                  </Link>
                   <h2>{movie.title}</h2>
                   <div className="rating_container">
                     <img src={star} alt="" />
