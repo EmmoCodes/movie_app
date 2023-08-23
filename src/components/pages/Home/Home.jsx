@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import AwesomeSlider from 'react-awesome-slider'
+import { Link } from 'react-router-dom'
 import { apiKey } from '../../../data/api'
 import { getAllMovies } from '../../utils/fetches/movieFetch'
 import 'react-awesome-slider/dist/styles.css'
 import './Home.scss'
 import SearchBar from '../../shared/SearchBar/SearchBar.jsx'
-import { Link } from 'react-router-dom'
 
 function Home() {
   const [popularMovies, setPopularMovies] = useState([])
@@ -18,7 +18,6 @@ function Home() {
       'results',
     )
   }, [])
-  console.log(popularMovies)
 
   useEffect(() => {
     const popularRandomMovies = popularMovies.sort(() => 0.5 - Math.random())

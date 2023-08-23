@@ -6,6 +6,7 @@ import button from '../../../assets/img/backbuttondetails.svg'
 import punkt from '../../../assets/img/Ellipse.svg'
 import start from '../../../assets/img/polygon.svg'
 import './MovieDetails.scss'
+
 const MovieDetails = () => {
   const [movieDetail, setMovieDetail] = useState({})
   const params = useParams()
@@ -49,7 +50,7 @@ const MovieDetails = () => {
       <div className="genre_box">
         <h3>Genre</h3>
         <div className="genre_name">
-          <p>{movieDetail.genres[0].name}</p>
+          <p>{movieDetail.genres[0]?.name}</p>
           <p>{movieDetail.genres[1]?.name}</p>
           <p>{movieDetail.genres[2]?.name}</p>
           <p>{movieDetail.genres[3]?.name}</p>
@@ -59,7 +60,7 @@ const MovieDetails = () => {
       <div className="language_box">
         <h3>Languages</h3>
         <div className="languages">
-          <p>{movieDetail.spoken_languages[0].name}</p>
+          <p>{movieDetail.spoken_languages[0]?.name}</p>
           <p>{movieDetail.spoken_languages[1]?.name}</p>
           <p>{movieDetail.spoken_languages[2]?.name}</p>
           <p>{movieDetail.spoken_languages[3]?.name}</p>
