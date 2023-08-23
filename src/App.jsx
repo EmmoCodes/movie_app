@@ -65,7 +65,8 @@ function App() {
       {location.pathname !== '/' &&
         location.pathname !== '/getstarted' &&
         location.pathname !== '/login' &&
-        location.pathname !== '/register' && <NavbarMobile />}
+        location.pathname !== '/register' &&
+        location.pathname !== '/trailer' && <NavbarMobile />}
     </>
   )
 }
