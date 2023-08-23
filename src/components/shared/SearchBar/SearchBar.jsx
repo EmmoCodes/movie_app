@@ -31,7 +31,7 @@ function SearchBar() {
         </div>
       </div>
 
-      {location.pathname !== '/home' ? (
+      {location.pathname !== '/home' && location.pathname !== '/popular' ? (
         <div className="genre_buttons">
           <NavLink
             to="/list"
@@ -56,14 +56,11 @@ function SearchBar() {
           </NavLink>
         </div>
       ) : null}
-      {location.pathname === '/home' ? (
-
-
+      {location.pathname === '/home' || location.pathname === '/popular' ? (
         <div className="movie_list_buttoncontainer">
           <NavLink to="/list">
             <button type="button" className="movie_list_button">
               Browse all
-
             </button>
           </NavLink>
         </div>
