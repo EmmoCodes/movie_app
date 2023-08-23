@@ -7,7 +7,7 @@
     position: fixed;
     bottom: 45px;
     right: 17px;
-    background: linear-gradient(to bottom right, #fc2121, #ff6b6b);
+    background: linear-gradient(to right, #ff6b6b, #fc2121);
     border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 7px;
@@ -20,7 +20,7 @@
     display: flex;
     justify-content: space-evenly;
     .sort_button {
-      background: linear-gradient(to bottom right, #fc2121, #ff6b6b);
+      background: linear-gradient(to right, #ff6b6b, #fc2121);
       border-radius: 10px;
       border: none;
       padding: 10px 30px;

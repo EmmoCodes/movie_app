@@ -14,7 +14,7 @@
 .register_page button {
   padding-inline: 50px;
   padding-block: 16px;
-  background-color: #fc2121;
+  background: linear-gradient(to right, #ff6b6b, #fc2121);
   border-radius: 10px;
   border: none;
   color: #fff;
@@ -26,12 +26,6 @@
     rgba(0, 0, 0, 0.09) 0px -3px 5px;
   min-width: 50%;
   font-size: 15px;
-}
-
-.register_buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
 }
 
 .register_buttons a {
