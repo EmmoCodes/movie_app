@@ -18,10 +18,14 @@ function LoginForm() {
         <input type="text" name="password" id="password" placeholder="Password..." />
       </form>
       <div className="login_pw">
-        <Link to="/home">
-          <button type="button">Login</button>
-        </Link>
-        <Link>Forgot your password?</Link>
+        <span>
+          <Link to="/home">
+            <button type="button">Login</button>
+          </Link>
+        </span>
+        <span>
+          <Link>Forgot your password?</Link>
+        </span>
       </div>
       <div className="need_account">
         <p>Need an Account?</p>
