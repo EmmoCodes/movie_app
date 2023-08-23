@@ -11,25 +11,31 @@ import SearchModalItem from '../../pages/SearchModalItem/SearchModalItem.jsx'
 function SearchBar() {
   const { handleGenreSearch } = useContext(FilterContext)
   const { handleInputSearch, handleSearch, inputSearch, setInputSearch } = useContext(InputContext)
-  const { movieData, setMovieData } = useContext(MovieContext)
+  const { movieData } = useContext(MovieContext)
   const location = useLocation()
   const [searchFrame, setSearchFrame] = useState(false)
 
   useEffect(() => {
-    if (inputSearch === undefined) return
+    if (inputSearch === '') {
+      setSearchFrame(false)
+      return
+    }
     const searchTimeout = setTimeout(() => {
-      if (inputSearch !== undefined) {
+      if (inputSearch !== '') {
+        setSearchFrame(true)
         handleSearch()
       }
-    }, 700)
-    clearTimeout(searchTimeout)
+    }, 300)
+    return () => {
+      clearTimeout(searchTimeout)
+    }
   }, [inputSearch])
 
   return (
     <>
       <section className="searchbar_wrapper">
         <div className="search_bar">
-          <div onChange={handleSearch}>
+          <div>
             <label htmlFor="search"></label>
             <input
               type="text"
@@ -38,12 +44,9 @@ function SearchBar() {
               placeholder="Search Movie..."
               onChange={handleInputSearch}
               value={inputSearch}
-              onFocus={() => {
-                setSearchFrame(true)
-              }}
-              onBlur={() => {
-                setInputSearch('')
-              }}
+              // onFocus={() => {
+              //   setSearchFrame(true)
+              // }}
             />
             <button className="lens" type="button">
               <img src={lens} alt="" />
