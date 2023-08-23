@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams,useNavigate } from 'react-router-dom'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
 import { apiKey } from '../../../data/api.js'
 import './Trailer.scss'
 import trailer from '../../../assets/img/watchtrailer.png'
 import notrailer from '../../../assets/img/notrailer.png'
+import button from '../../../assets/img/backbuttondetails.svg'
 
 function Trailer() {
   const [trailerData, setTrailerData] = useState([])
   const params = useParams()
+    const navigate = useNavigate()
 
   useEffect(() => {
     getAllMovies(`https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=${apiKey}`, setTrailerData, 'results')
@@ -33,24 +35,27 @@ let trailerKey = ''
   console.log(trailerData)
 
   return (
-
-    <section className="trailer_section">
-      <img className="watch_trailer" src={trailer} alt="" />
-      <div className="trailer_box">
-        {trailerKey ? (
-          <iframe
-            title="Movie Trailer"
-            src={`https://www.youtube.com/embed/${trailerKey}`}
-            width="350px"
-            height="250px"
-            frameBorder="0"
-            allowFullScreen></iframe>
-        ) : (
-          <img className="no_trailer" src={notrailer} alt="" />
-        )}
+    <>
+      <div className="backbutton">
+        <img src={button} alt="" onClick={() => navigate(-1)} />
       </div>
-    </section>
-
+      <section className="trailer_section">
+        <img className="watch_trailer" src={trailer} alt="" />
+        <div className="trailer_box">
+          {trailerKey ? (
+            <iframe
+              title="Movie Trailer"
+              src={`https://www.youtube.com/embed/${trailerKey}`}
+              width="350px"
+              height="250px"
+              frameBorder="0"
+              allowFullScreen></iframe>
+          ) : (
+            <img className="no_trailer" src={notrailer} alt="" />
+          )}
+        </div>
+      </section>
+    </>
   )
 }
 
