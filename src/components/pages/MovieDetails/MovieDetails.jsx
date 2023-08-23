@@ -28,7 +28,7 @@ const MovieDetails = () => {
       <img src={`https://image.tmdb.org/t/p/w500${movieDetail.backdrop_path}`} alt="Photo" className="mainimg" />
       <div className="relativ_headline">
         <p>Movie Details</p>
-        <h1>{movieDetail.title}</h1>
+        <h1>{movieDetail.title.substring(0, 30)}</h1>
         <div className="date_duration_genre">
           <img src={start} alt="star Icon" />
           <p>{movieDetail.vote_average}</p>

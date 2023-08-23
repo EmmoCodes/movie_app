@@ -1,13 +1,14 @@
 .details_wrapper {
   display: flex;
   flex-direction: column;
-  height: 95vh;
+  min-height: 95vh;
 
   .backbutton {
     position: absolute;
     z-index: 1;
     top: 20px;
     left: 20px;
+
     div {
       background-color: #fff;
       padding: 10px 5px;
@@ -19,6 +20,7 @@
       }
     }
   }
+
   .mainimg {
     min-height: 400px;
     object-fit: cover;
@@ -36,6 +38,7 @@
     p {
       text-align: center;
     }
+
     h1 {
       text-align: center;
       margin-bottom: 10px;
@@ -57,6 +60,7 @@
       font-size: 20px;
       margin-bottom: 19px;
     }
+
     .see_more {
       color: #fc2121;
     }
@@ -84,11 +88,15 @@
     padding-right: 20px;
     margin-top: 10px;
     display: flex;
-    align-items: center;
+    align-items: baseline;
+    column-gap: 10px;
     justify-content: space-between;
 
     .languages {
       display: flex;
+      flex-wrap: nowrap;
+      max-width: 200px;
+      overflow: hidden;
 
       p {
         margin-left: 5px;
@@ -99,6 +107,7 @@
   .buttonbox {
     margin-top: 30px;
     text-align: center;
+
     .watch_movie_button {
       margin-bottom: 50px;
       padding-inline: 50px;
@@ -107,12 +116,11 @@
       border-radius: 10px;
       border: none;
       color: #fff;
-      box-shadow:
-        rgba(0, 0, 0, 0.25) 0px 54px 64px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px,
-        rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px,
-        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 64px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px,
+      rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
       min-width: 50%;
       font-size: 15px;
     }
