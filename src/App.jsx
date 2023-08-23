@@ -11,7 +11,7 @@ import MovieDetails from './components/pages/MovieDetails/MovieDetails'
 import Trailer from './components/pages/Trailer/Trailer.jsx'
 import LoginForm from './components/pages/LoginForm/LoginForm'
 import { FilterContext } from './components/utils/Contexts/FilterContext.jsx'
-import { InputContext, InputValueContext } from './components/utils/Contexts/InputContext.jsx'
+import { InputContext } from './components/utils/Contexts/InputContext.jsx'
 import { MovieContext } from './components/utils/Contexts/MovieContext.jsx'
 import { getAllMovies } from './components/utils/fetches/movieFetch.js'
 import { apiKey } from './data/api.js'
@@ -39,27 +39,24 @@ function App() {
       setMovieData,
       'results',
     )
-    setInputSearch('')
   }
 
   return (
     <>
       <FilterContext.Provider value={{ genreValue, handleGenreSearch }}>
-        <InputContext.Provider value={{ inputSearch, handleInputSearch, handleSearch }}>
+        <InputContext.Provider value={{ inputSearch, handleInputSearch, handleSearch, setInputSearch }}>
           <MovieContext.Provider value={{ movieData, setMovieData }}>
-            <InputValueContext.Provider value={{ inputValue }}>
-              <Routes>
-                <Route path="/home" element={<Home />} />
-                <Route path="/getstarted" element={<GetStarted />} />
-                <Route path="/" element={<Landingpage />} />
-                <Route path="/register" element={<RegisterForm />} />
-                <Route path="/list" element={<MovieList />} />
-                <Route path="/details/:id" element={<MovieDetails />} />
-                <Route path="/login" element={<LoginForm />} />
-                <Route path="/popular" element={<PopularList />} />
-                <Route path="/trailer/:id" element={<Trailer />} />
-              </Routes>
-            </InputValueContext.Provider>
+            <Routes>
+              <Route path="/home" element={<Home />} />
+              <Route path="/getstarted" element={<GetStarted />} />
+              <Route path="/" element={<Landingpage />} />
+              <Route path="/register" element={<RegisterForm />} />
+              <Route path="/list" element={<MovieList />} />
+              <Route path="/details/:id" element={<MovieDetails />} />
+              <Route path="/login" element={<LoginForm />} />
+              <Route path="/popular" element={<PopularList />} />
+              <Route path="/trailer/:id" element={<Trailer />} />
+            </Routes>
           </MovieContext.Provider>
         </InputContext.Provider>
       </FilterContext.Provider>

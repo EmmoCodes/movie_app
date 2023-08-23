@@ -1,0 +1,30 @@
+.trailer_section {
+  max-width: 390px;
+  background: linear-gradient(to right, #fc2121, #ff6b6b);
+  min-height: 95vh;
+  position: relative;
+
+
+  div {
+    margin-block: 200px;
+    position: absolute;
+    margin-left: 5%;
+  }
+}
+
+.watch_trailer {
+  position: absolute;
+  max-width: 300px;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 10%;
+}
+
+.no_trailer {
+  position: relative;
+  transform: translateX(-50%);
+  left: 60%;
+  max-width: 300px;
+  margin-top: 150px;
+
+}

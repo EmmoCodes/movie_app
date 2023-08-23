@@ -4,14 +4,13 @@ import { useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import lens from '../../../assets/img/vector.svg'
 import { FilterContext } from '../../utils/Contexts/FilterContext.jsx'
-import { InputContext, InputValueContext } from '../../utils/Contexts/InputContext.jsx'
+import { InputContext } from '../../utils/Contexts/InputContext.jsx'
 import { MovieContext } from '../../utils/Contexts/MovieContext.jsx'
 import SearchModalItem from '../../pages/SearchModalItem/SearchModalItem.jsx'
 
 function SearchBar() {
   const { handleGenreSearch } = useContext(FilterContext)
-  const { handleInputSearch, handleSearch, inputSearch } = useContext(InputContext)
-  const { inputValue } = useContext(InputValueContext)
+  const { handleInputSearch, handleSearch, inputSearch, setInputSearch } = useContext(InputContext)
   const { movieData, setMovieData } = useContext(MovieContext)
   const location = useLocation()
   const [searchFrame, setSearchFrame] = useState(false)
@@ -20,10 +19,9 @@ function SearchBar() {
     if (inputSearch === undefined) return
     const searchTimeout = setTimeout(() => {
       if (inputSearch !== undefined) {
-        setSearchFrame(true)
         handleSearch()
       }
-    }, 300)
+    }, 700)
     clearTimeout(searchTimeout)
   }, [inputSearch])
 
@@ -31,7 +29,7 @@ function SearchBar() {
     <>
       <section className="searchbar_wrapper">
         <div className="search_bar">
-          <div>
+          <div onChange={handleSearch}>
             <label htmlFor="search"></label>
             <input
               type="text"
@@ -43,8 +41,11 @@ function SearchBar() {
               onFocus={() => {
                 setSearchFrame(true)
               }}
+              onBlur={() => {
+                setInputSearch('')
+              }}
             />
-            <button className="lens" type="button" onClick={handleSearch}>
+            <button className="lens" type="button">
               <img src={lens} alt="" />
             </button>
           </div>
@@ -84,18 +85,24 @@ function SearchBar() {
           </div>
         ) : null}
       </section>
-      <button
-        className={searchFrame ? 'show close_button' : 'hide'}
-        onClick={() => {
-          setSearchFrame(false)
-        }}>
-        X
-      </button>
-      <section className={searchFrame ? 'searched_movie_frame' : 'hide'}>
-        {movieData.map(movie => (
-          <SearchModalItem key={movie.id} movie={movie} id={movie.id} />
-        ))}
-      </section>
+
+      {location.pathname === '/home' ? (
+        <>
+          <button
+            className={searchFrame ? 'show close_button' : 'hide'}
+            onClick={() => {
+              setSearchFrame(false)
+            }}
+            type="button">
+            X
+          </button>
+          <section className={searchFrame ? 'searched_movie_frame' : 'hide'}>
+            {movieData.map(movie => (
+              <SearchModalItem key={movie.id} movie={movie} id={movie.id} />
+            ))}
+          </section>
+        </>
+      ) : null}
     </>
   )
 }

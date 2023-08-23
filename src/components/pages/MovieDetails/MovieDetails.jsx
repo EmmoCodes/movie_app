@@ -19,6 +19,7 @@ const MovieDetails = () => {
   if (!movieDetail.id) {
     return <p>Is Loading...</p>
   }
+
   function truncateOverview(overview) {
     const words = overview.split(' ')
     if (words.length > 20) {
@@ -28,13 +29,14 @@ const MovieDetails = () => {
     }
   }
 
+
   return (
     <div className="details_wrapper">
       <div className="backbutton">
         <img src={button} alt="" onClick={() => navigate(-1)} />
       </div>
 
-      <img src={`https://image.tmdb.org/t/p/w500${movieDetail.backdrop_path}`} alt="Photo" className="mainimg" />
+      <img src={`https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`} alt="Photo" className="mainimg" />
       <div className="relativ_headline">
         <p>Movie Details</p>
         <h1>{movieDetail.title.substring(0, 30)}</h1>
@@ -44,7 +46,7 @@ const MovieDetails = () => {
           <img src={punkt} alt="punkt Icon" />
           <p>{movieDetail.release_date}</p>
           <img src={punkt} alt="punkt Icon" />
-          <p>{movieDetail.genres[0].name}</p>
+          <p>{movieDetail.genres[0]?.name}</p>
           <img src={punkt} alt="punkt Icon" />
           <p>{movieDetail.runtime} min</p>
         </div>
