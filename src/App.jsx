@@ -10,11 +10,11 @@ import NavbarMobile from './components/shared/NavbarMobile/NavbarMobile'
 import MovieDetails from './components/pages/MovieDetails/MovieDetails'
 import LoginForm from './components/pages/LoginForm/LoginForm'
 import { FilterContext } from './components/utils/Contexts/FilterContext.jsx'
-import { InputContext } from './components/utils/Contexts/InputContext.jsx'
+import { InputContext, InputValueContext } from './components/utils/Contexts/InputContext.jsx'
 import { MovieContext } from './components/utils/Contexts/MovieContext.jsx'
-import { InputValueContext } from './components/utils/Contexts/InputContext.jsx'
 import { getAllMovies } from './components/utils/fetches/movieFetch.js'
 import { apiKey } from './data/api.js'
+import PopularList from './components/pages/PopularList/PopularList.jsx'
 
 function App() {
   const location = useLocation()
@@ -55,6 +55,7 @@ function App() {
                 <Route path="/list" element={<MovieList />} />
                 <Route path="/details/:id" element={<MovieDetails />} />
                 <Route path="/login" element={<LoginForm />} />
+                <Route path="/popular" element={<PopularList />} />
               </Routes>
             </InputValueContext.Provider>
           </MovieContext.Provider>

@@ -5,6 +5,7 @@ import { getAllMovies } from '../../utils/fetches/movieFetch'
 import 'react-awesome-slider/dist/styles.css'
 import './Home.scss'
 import SearchBar from '../../shared/SearchBar/SearchBar.jsx'
+import { Link } from 'react-router-dom'
 
 function Home() {
   const [popularMovies, setPopularMovies] = useState([])
@@ -33,9 +34,10 @@ function Home() {
         <div>
           <div className="trending">
             <h2>Trending Movies</h2>
-            <span>See All</span>
+            <Link to="/popular">
+              <span>See All</span>
+            </Link>
           </div>
-
 
           <article className="slider_wrapper">
             <AwesomeSlider className="aws_btn">
@@ -54,7 +56,6 @@ function Home() {
           </article>
         </div>
       </section>
-
     </>
   )
 }
