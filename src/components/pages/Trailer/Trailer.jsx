@@ -14,11 +14,15 @@ function Trailer() {
     getAllMovies(`https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=${apiKey}`, setTrailerData, 'results')
   }, [params.id])
 
-  let trailerKey = ''
+let trailerKey = ''
+
   trailerData.forEach(item => {
-    if (item.name === ('Official Trailer' || 'Trailer')) {
-      trailerKey = item.key
-    } else if (item.type === ('Official Trailer' || 'Trailer')) {
+    if (
+      item.name === 'Official Trailer' ||
+      item.name === 'Trailer' ||
+      item.type === 'Trailer' ||
+      item.type === 'Clip'
+    ) {
       trailerKey = item.key
     }
   })
@@ -29,6 +33,7 @@ function Trailer() {
   console.log(trailerData)
 
   return (
+
     <section className="trailer_section">
       <img className="watch_trailer" src={trailer} alt="" />
       <div className="trailer_box">
@@ -45,6 +50,7 @@ function Trailer() {
         )}
       </div>
     </section>
+
   )
 }
 
