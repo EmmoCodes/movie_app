@@ -16,10 +16,6 @@ function MovieList() {
   const { genreValue } = useContext(FilterContext)
   const { inputSearch, handleSearch } = useContext(InputContext)
 
-  const [sortedMovieData, setSortedMovieData] = useState(null)
-  const [isSorted, setIsSorted] = useState(false)
-  const [isSortedZA, setIsSortedZA] = useState(false)
-
   useEffect(() => {
     setLoading(true)
 
@@ -42,41 +38,16 @@ function MovieList() {
     return <p>Is Loading....</p>
   }
 
-  function sortMovies() {
-    if (isSorted) {
-      setSortedMovieData(null)
-      setIsSorted(false)
-    } else {
-      const sortedData = [...movieData].sort((a, b) => {
-        if (a.title < b.title) {
-          return -1
-        }
-        if (a.title > b.title) {
-          return 1
-        }
-        return 0
-      })
-      setSortedMovieData(sortedData)
-      setIsSorted(true)
-    }
-  }
-  function sortMoviesZA() {
-    if (isSortedZA) {
-      setSortedMovieData(null)
-      setIsSortedZA(false)
-    } else {
-      const sortedData = [...movieData].sort((a, b) => {
-        if (a.title > b.title) {
-          return -1
-        }
-        if (a.title < b.title) {
-          return 1
-        }
-        return 0
-      })
-      setSortedMovieData(sortedData)
-      setIsSortedZA(true)
-    }
+  const sortAscending = () => {
+    movieData.sort((a, b) => {
+      if (a.title > b.title) {
+        return -1
+      }
+      if (a.title < b.title) {
+        return 1
+      }
+      return 0
+    })
   }
 
   return (
@@ -84,17 +55,17 @@ function MovieList() {
       <section className="movie_wrapper">
         <SearchBar />
         <article className="Sort_button_wrapper">
-          <button type="button" className="sort_button" onClick={sortMovies}>
+          <button type="button" className="sort_button" onClick={sortAscending}>
             Sort: A-Z
           </button>
-          <button type="button" className="sort_button" onClick={sortMoviesZA}>
+          <button type="button" className="sort_button">
             Sort Z-A
           </button>
         </article>
 
-        {sortedMovieData !== null
-          ? sortedMovieData.map(movie => <MovieItem key={movie.id} movie={movie} id={movie.id} />)
-          : movieData.map(movie => <MovieItem key={movie.id} movie={movie} id={movie.id} />)}
+        {movieData.map(movie => (
+          <MovieItem key={movie.id} movie={movie} id={movie.id} />
+        ))}
 
         <div className="scroll_to_topbutton" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <img src={button} alt="button icon" />

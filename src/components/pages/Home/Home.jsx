@@ -38,7 +38,6 @@ function Home() {
               <span>See All</span>
             </Link>
           </div>
-
           <article className="slider_wrapper">
             <AwesomeSlider className="aws_btn">
               {randomMovies.map(movie => (
