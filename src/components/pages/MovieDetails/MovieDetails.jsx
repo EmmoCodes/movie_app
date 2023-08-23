@@ -8,6 +8,7 @@ import start from '../../../assets/img/polygon.svg'
 import './MovieDetails.scss'
 
 const MovieDetails = () => {
+  const [showFullOverview, setShowFullOverview] = useState(false)
   const [movieDetail, setMovieDetail] = useState({})
   const params = useParams()
   const navigate = useNavigate()
@@ -18,7 +19,16 @@ const MovieDetails = () => {
   if (!movieDetail.id) {
     return <p>Is Loading...</p>
   }
-  console.log(movieDetail)
+
+  function truncateOverview(overview) {
+    const words = overview.split(' ')
+    if (words.length > 20) {
+      return words.slice(0, 20).join(' ') + '...'
+    } else {
+      return overview
+    }
+  }
+
 
   return (
     <div className="details_wrapper">
@@ -44,8 +54,11 @@ const MovieDetails = () => {
 
       <div className="overview_wrapper">
         <h2>Overview</h2>
-        <p>{movieDetail.overview.slice(0, 150)}</p>
-        <span className="see_more">See more</span>
+        <p>{showFullOverview ? movieDetail.overview : truncateOverview(movieDetail.overview)}</p>
+
+        <span className="see_more" onClick={() => setShowFullOverview(!showFullOverview)}>
+          {showFullOverview ? 'See less' : 'See more'}
+        </span>
       </div>
 
       <div className="genre_box">
