@@ -54,11 +54,6 @@
   color: #fff;
   background: linear-gradient(to right, #fc2121, #ff6b6b);
 
-
-
-
-
-
   box-shadow:
     rgba(0, 0, 0, 0.25) 0px 54px 64px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px,
@@ -69,5 +64,9 @@
   font-size: 15px;
 
   margin-bottom: 90px;
+}
 
+.movie_list_buttoncontainer {
+  display: flex;
+  justify-content: center;
 }
