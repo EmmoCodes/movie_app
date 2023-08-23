@@ -3,12 +3,11 @@
   flex-direction: column;
   height: 95vh;
 
-  a {
+  .backbutton {
     position: absolute;
     z-index: 1;
     top: 20px;
     left: 20px;
-
     div {
       background-color: #fff;
       padding: 10px 5px;
@@ -20,11 +19,6 @@
       }
     }
   }
-
-  a:hover {
-    cursor: pointer;
-  }
-
   .mainimg {
     min-height: 400px;
     object-fit: cover;
