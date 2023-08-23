@@ -7,14 +7,14 @@
 
   .logo {
     max-width: 200px;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
   }
 }
 
 .login_inputs {
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  margin: 50px;
   text-align: start;
   gap: 10px;
 }
@@ -27,7 +27,6 @@
 }
 
 .login_form button {
-  margin-bottom: 10px;
   padding-inline: 50px;
   padding-block: 16px;
   background-color: #fc2121;
@@ -47,12 +46,11 @@
 .login_pw {
   display: flex;
   flex-direction: column;
-}
-
-.login_pw a {
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 13px;
+  a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 13px;
+  }
 }
 
 .need_account {
