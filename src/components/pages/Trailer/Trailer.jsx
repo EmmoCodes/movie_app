@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
 import { apiKey } from '../../../data/api.js'
-import { useParams } from 'react-router-dom'
+import './Trailer.scss'
+import trailer from '../../../assets/img/watchtrailer.png'
+import notrailer from '../../../assets/img/notrailer.png'
 
 function Trailer() {
   const [trailerData, setTrailerData] = useState([])
@@ -26,19 +29,22 @@ function Trailer() {
   console.log(trailerData)
 
   return (
-    <div className="trailer_box">
-      {trailerKey ? (
-        <iframe
-          title="Movie Trailer"
-          src={`https://www.youtube.com/embed/${trailerKey}`}
-          width="500px"
-          height="400px"
-          frameBorder="0"
-          allowFullScreen></iframe>
-      ) : (
-        <p>No Trailer found, Try again!</p>
-      )}
-    </div>
+    <section className="trailer_section">
+      <img className="watch_trailer" src={trailer} alt="" />
+      <div className="trailer_box">
+        {trailerKey ? (
+          <iframe
+            title="Movie Trailer"
+            src={`https://www.youtube.com/embed/${trailerKey}`}
+            width="350px"
+            height="250px"
+            frameBorder="0"
+            allowFullScreen></iframe>
+        ) : (
+          <img className="no_trailer" src={notrailer} alt="" />
+        )}
+      </div>
+    </section>
   )
 }
 
