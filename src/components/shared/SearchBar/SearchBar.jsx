@@ -97,7 +97,7 @@ function SearchBar() {
               setSearchFrame(false)
             }}
             type="button">
-            X
+            Close
           </button>
           <section className={searchFrame ? 'searched_movie_frame' : 'hide'}>
             {movieData.map(movie => (

@@ -48,12 +48,12 @@ function Home() {
                       alt="photos"
                       key={movie.backdrop_path}
                     />
+                    <h2>{movie.title}</h2>
+                    <div className="rating_container">
+                      <img src={star} alt="" />
+                      <p>{movie.vote_average} / 10.0</p>
+                    </div>
                   </Link>
-                  <h2>{movie.title}</h2>
-                  <div className="rating_container">
-                    <img src={star} alt="" />
-                    <p>{movie.vote_average} / 10.0</p>
-                  </div>
                 </div>
               ))}
             </AwesomeSlider>
