@@ -22,7 +22,7 @@ function SearchBar() {
             id="search"
             placeholder="Search Movie..."
             onChange={handleInputSearch}
-            defaultValue={inputValue}
+            value={inputSearch}
           />
           <button className="lens" type="button" onClick={handleSearch}>
             <img src={lens} alt="" />

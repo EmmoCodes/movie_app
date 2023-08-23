@@ -19,7 +19,7 @@ import { apiKey } from './data/api.js'
 function App() {
   const location = useLocation()
   const [genreValue, setGenreValue] = useState('27')
-  const [inputSearch, setInputSearch] = useState()
+  const [inputSearch, setInputSearch] = useState('')
   const [movieData, setMovieData] = useState([])
   const [inputValue, setInputValue] = useState('')
 
@@ -38,7 +38,7 @@ function App() {
       setMovieData,
       'results',
     )
-    setInputValue('')
+    setInputSearch('')
   }
 
   return (
