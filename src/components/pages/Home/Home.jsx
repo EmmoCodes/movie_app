@@ -27,30 +27,34 @@ function Home() {
 
   return (
     <>
-      <h1>Welcome</h1>
-      <SearchBar />
-      <div>
+      <section className="home">
+        <h1>Welcome</h1>
+        <SearchBar />
         <div>
-          <h1>Trending Movies</h1>
-          <span> See All </span>
-        </div>
+          <div className="trending">
+            <h2>Trending Movies</h2>
+            <span>See All</span>
+          </div>
 
-        <section className="slider_wrapper">
-          <AwesomeSlider className="aws_btn">
-            {randomMovies.map(movie => (
-              <div key={movie.id}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                  alt="photos"
-                  key={movie.backdrop_path}
-                />
-                <h2>{movie.title}</h2>
-                <p>{movie.vote_average} / 10.0</p>
-              </div>
-            ))}
-          </AwesomeSlider>
-        </section>
-      </div>
+
+          <article className="slider_wrapper">
+            <AwesomeSlider className="aws_btn">
+              {randomMovies.map(movie => (
+                <div key={movie.id}>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                    alt="photos"
+                    key={movie.backdrop_path}
+                  />
+                  <h2>{movie.title}</h2>
+                  <p>{movie.vote_average} / 10.0</p>
+                </div>
+              ))}
+            </AwesomeSlider>
+          </article>
+        </div>
+      </section>
+
     </>
   )
 }

@@ -4,7 +4,7 @@
 
 .lens {
   position: absolute;
-  top: 60px;
+  top: 64px;
   right: 20px;
   border: none;
   background-color: #fbf8ff;
@@ -13,8 +13,8 @@
 .search_bar input {
   margin-top: 50px;
   margin-bottom: 30px;
-  padding-block: 14px;
-  min-width: 23rem;
+  padding-block: 18px;
+  min-width: 350px;
   border-radius: 10px;
   border: none;
   background-color: #fbf8ff;
@@ -48,10 +48,17 @@
 .movie_list_button {
   padding-inline: 30px;
   padding-block: 10px;
-  background: linear-gradient(to right, #fc2121, #ff6b6b);
+
   border-radius: 10px;
   border: none;
   color: #fff;
+  background: linear-gradient(to right, #fc2121, #ff6b6b);
+
+
+
+
+
+
   box-shadow:
     rgba(0, 0, 0, 0.25) 0px 54px 64px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px,
@@ -60,4 +67,7 @@
     rgba(0, 0, 0, 0.09) 0px -3px 5px;
   min-width: 100px;
   font-size: 15px;
+
+  margin-bottom: 90px;
+
 }
