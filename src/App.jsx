@@ -8,6 +8,7 @@ import Landingpage from './components/pages/Landingpage/Landingpage'
 import GetStarted from './components/pages/GetStarted/GetStarted'
 import NavbarMobile from './components/shared/NavbarMobile/NavbarMobile'
 import MovieDetails from './components/pages/MovieDetails/MovieDetails'
+import TrailerModal from './components/shared/TrailerModal/TrailerModal'
 import LoginForm from './components/pages/LoginForm/LoginForm'
 import { FilterContext } from './components/utils/Contexts/FilterContext.jsx'
 import { InputContext, InputValueContext } from './components/utils/Contexts/InputContext.jsx'
@@ -56,6 +57,7 @@ function App() {
                 <Route path="/details/:id" element={<MovieDetails />} />
                 <Route path="/login" element={<LoginForm />} />
                 <Route path="/popular" element={<PopularList />} />
+                <Route path="/trailer/:id" element={<TrailerModal />} />
               </Routes>
             </InputValueContext.Provider>
           </MovieContext.Provider>
@@ -65,7 +67,9 @@ function App() {
       {location.pathname !== '/' &&
         location.pathname !== '/getstarted' &&
         location.pathname !== '/login' &&
-        location.pathname !== '/register' && <NavbarMobile />}
+        location.pathname !== '/register' &&
+        location.pathname !== '/trailer/:id' && 
+        <NavbarMobile />}
     </>
   )
 }
