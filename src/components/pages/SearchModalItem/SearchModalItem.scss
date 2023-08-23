@@ -1,0 +1,13 @@
+.movie_frame_list {
+  max-height: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  column-gap: 20px;
+
+  a img {
+    height: 80px;
+    border-radius: 10px;
+  }
+
+
+}
