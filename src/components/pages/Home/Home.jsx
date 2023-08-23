@@ -45,7 +45,7 @@ function Home() {
                   key={movie.backdrop_path}
                 />
                 <h2>{movie.title}</h2>
-                <p>{movie.vote_average}</p>
+                <p>{movie.vote_average} / 10.0</p>
               </div>
             ))}
           </AwesomeSlider>

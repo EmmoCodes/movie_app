@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { apiKey } from '../../../data/api.js'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
 import button from '../../../assets/img/backbuttondetails.svg'
@@ -9,7 +9,7 @@ import './MovieDetails.scss'
 const MovieDetails = () => {
   const [movieDetail, setMovieDetail] = useState({})
   const params = useParams()
-
+  const navigate = useNavigate()
   useEffect(() => {
     getAllMovies(`https://api.themoviedb.org/3/movie/${params.id}?api_key=${apiKey}`, setMovieDetail)
   }, [params.id])
@@ -20,11 +20,9 @@ const MovieDetails = () => {
 
   return (
     <div className="details_wrapper">
-      <Link to="/list">
-        <div>
-          <img src={button} alt="" />
-        </div>
-      </Link>
+      <div className="backbutton">
+        <img src={button} alt="" onClick={() => navigate(-1)} />
+      </div>
 
       <img src={`https://image.tmdb.org/t/p/w500${movieDetail.backdrop_path}`} alt="Photo" className="mainimg" />
       <div className="relativ_headline">
