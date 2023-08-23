@@ -16,6 +16,17 @@
     rotate: -90deg;
     scale: -0.8;
   }
+  .Sort_button_wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    .sort_button {
+      background: linear-gradient(to bottom right, #fc2121, #ff6b6b);
+      border-radius: 10px;
+      border: none;
+      padding: 10px 30px;
+      color: #fff;
+    }
+  }
   .movie_frame {
     display: flex;
     column-gap: 15px;
