@@ -38,7 +38,7 @@ function MovieItem({ movie }) {
         <div className="frame_text_info">
           <p>
             <span className="imdb"></span>
-            {movie.vote_average}
+            {movie.vote_average.toFixed(1)}
             <img src={punkt} alt="Punkt Icon" className="punkt" />
           </p>
           <p>

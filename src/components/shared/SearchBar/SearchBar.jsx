@@ -57,10 +57,13 @@ function SearchBar() {
         </div>
       ) : null}
       {location.pathname === '/home' ? (
-        <div>
+
+
+        <div className="movie_list_buttoncontainer">
           <NavLink to="/list">
-            <button className="movie_list_button" type="button">
-              Movie List
+            <button type="button" className="movie_list_button">
+              Browse all
+
             </button>
           </NavLink>
         </div>

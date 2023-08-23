@@ -36,6 +36,7 @@ function Home() {
             <span>See All</span>
           </div>
 
+
           <article className="slider_wrapper">
             <AwesomeSlider className="aws_btn">
               {randomMovies.map(movie => (
@@ -46,13 +47,14 @@ function Home() {
                     key={movie.backdrop_path}
                   />
                   <h2>{movie.title}</h2>
-                  <p>{movie.vote_average}</p>
+                  <p>{movie.vote_average} / 10.0</p>
                 </div>
               ))}
             </AwesomeSlider>
           </article>
         </div>
       </section>
+
     </>
   )
 }
