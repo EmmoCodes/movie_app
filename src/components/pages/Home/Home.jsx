@@ -6,6 +6,8 @@ import { getAllMovies } from '../../utils/fetches/movieFetch'
 import 'react-awesome-slider/dist/styles.css'
 import './Home.scss'
 import SearchBar from '../../shared/SearchBar/SearchBar.jsx'
+import star from '../../../assets/img/polygon.svg'
+
 
 function Home() {
   const [popularMovies, setPopularMovies] = useState([])
@@ -48,7 +50,10 @@ function Home() {
                     key={movie.backdrop_path}
                   />
                   <h2>{movie.title}</h2>
-                  <p>{movie.vote_average} / 10.0</p>
+                  <div className="rating_container">
+                    <img src={star} alt="" />
+                    <p>{movie.vote_average} / 10.0</p>
+                  </div>
                 </div>
               ))}
             </AwesomeSlider>
