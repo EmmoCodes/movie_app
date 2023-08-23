@@ -67,9 +67,11 @@ const MovieDetails = () => {
         </div>
       </div>
       <div className="buttonbox">
-        <button type="button" className="watch_movie_button">
-          Watch Trailer
-        </button>
+        <Link to={`/trailer/${movieDetail.id}`}>
+          <button type="button" className="watch_movie_button">
+            Watch Trailer
+          </button>
+        </Link>
       </div>
     </div>
   )
