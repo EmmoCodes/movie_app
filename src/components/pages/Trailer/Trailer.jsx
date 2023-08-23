@@ -11,11 +11,15 @@ function Trailer() {
     getAllMovies(`https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=${apiKey}`, setTrailerData, 'results')
   }, [params.id])
 
-  let trailerKey = ''
+let trailerKey = ''
+
   trailerData.forEach(item => {
-    if (item.name === ('Official Trailer' || 'Trailer')) {
-      trailerKey = item.key
-    } else if (item.type === ('Official Trailer' || 'Trailer')) {
+    if (
+      item.name === 'Official Trailer' ||
+      item.name === 'Trailer' ||
+      item.type === 'Trailer' ||
+      item.type === 'Clip'
+    ) {
       trailerKey = item.key
     }
   })
@@ -31,8 +35,6 @@ function Trailer() {
         <iframe
           title="Movie Trailer"
           src={`https://www.youtube.com/embed/${trailerKey}`}
-          width="500px"
-          height="400px"
           frameBorder="0"
           allowFullScreen></iframe>
       ) : (
