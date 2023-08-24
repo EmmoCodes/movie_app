@@ -40,7 +40,6 @@ function App() {
 
   const showToggle = location.pathname === '/home'
 
-
   const toggleTheme = () => {
     setDarkTheme(prevTheme => !prevTheme)
   }
@@ -87,9 +86,13 @@ function App() {
         </InputContext.Provider>
       </FilterContext.Provider>
 
-
-      <NavbarMobile />
-
+      {location.pathname === '/' ||
+      location.pathname === '/login' ||
+      location.pathname === '/popular' ||
+      location.pathname === '/register' ||
+      location.pathname === '/getstarted' ? null : (
+        <NavbarMobile />
+      )}
 
       {showToggle &&
         location.pathname !== '/' &&
@@ -97,8 +100,6 @@ function App() {
         location.pathname !== '/login' &&
         location.pathname !== '/register' && (
           <div>
-
-
             <ToggleBtn onClick={toggleTheme} />
           </div>
         )}
