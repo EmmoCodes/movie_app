@@ -82,14 +82,23 @@ function NavbarMobile() {
             <img src={isHomeActive ? HomeRed : Home} alt="Home Icon" />
           </li>
         </Link>
+
+         
         <li onClick={handleBookmarkClick}>
+          <Link to="/favorites">
           <img src={isBookmarkActive ? BookmarkRed : Bookmark} alt="Bookmark Icon" />
+          </Link>
+
         </li>
         <li onClick={handleSaveClick}>
           <img src={isSaveActive ? SaveRed : Save} alt="save Icon" />
         </li>
+
         <li onClick={handleProfileClick}>
-          <img src={isProfileActive ? ProfileRed : Profile} alt="Profile Icon" />
+          <Link to="/profile">
+            <img src={isProfileActive ? ProfileRed : Profile} alt="Profile Icon" />
+          </Link>
+
         </li>
       </ul>
     </section>
