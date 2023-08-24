@@ -69,7 +69,7 @@ function MovieItem({ movie }) {
           <p>
             {genreActive
               ? movieDetails.genres.find(genre => genre.id === Number(genreValue))?.name
-              : movieDetails.genres[0].name}
+              : movieDetails.genres[0]?.name}
             <img src={punkt} alt="Punkt Icon" className="punkt" />
           </p>
           <p>{movieDetails.runtime} m</p>
