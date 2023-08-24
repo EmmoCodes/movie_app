@@ -2,7 +2,9 @@
   position: absolute;
   top: 1.5%;
   right: 20px;
-  transition: right 0.3s, background-color 0.3s;
+  transition:
+    right 0.3s,
+    background-color 0.3s;
 }
 
 .button.r {
@@ -22,7 +24,6 @@
   cursor: pointer;
   height: 0;
   width: 0;
-
 }
 
 .button.r .knobs {
@@ -42,10 +43,9 @@
   left: -1px;
   width: 31px;
   height: 31px;
- background: linear-gradient(0.25turn, #f80000f9, #841e1e, #ff0505);
+  background: linear-gradient(0.25turn, #f80000f9, #841e1e, #ff0505);
   border-radius: 50%;
   transition: left 0.3s;
-
 }
 
 // .toggle-button-container.checked {
@@ -54,7 +54,6 @@
 
 .button.r.checked {
   background-color: rgb(255, 255, 255);
-
 }
 
 .button.r.checked .knobs {
@@ -63,4 +62,9 @@
 
 .button.r.checked .layer {
   left: 29px;
+}
+@media screen and (min-width: 391px) {
+  .toggle-button-container {
+    top: 10%;
+  }
 }

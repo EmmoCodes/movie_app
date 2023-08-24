@@ -8,9 +8,11 @@ function FavPage() {
 
   return (
     <section className="movie_wrapper">
-      {favorites.map(movie => (
-        <FavItem key={movie.id} id={movie.id} movie={movie} />
-      ))}
+      <article className="item_wrapper">
+        {favorites.map(movie => (
+          <FavItem key={movie.id} id={movie.id} movie={movie} />
+        ))}
+      </article>
     </section>
   )
 }
