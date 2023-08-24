@@ -119,32 +119,36 @@
       border-radius: 10px;
       border: none;
       color: #fff;
-      box-shadow:
-        rgba(0, 0, 0, 0.25) 0px 54px 64px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px,
-        rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px,
-        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 64px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px,
+      rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
       min-width: 50%;
       font-size: 15px;
     }
   }
 }
+
 @media screen and (min-width: 391px) {
   .details_wrapper {
     flex-direction: row;
     justify-content: center;
+
     .mainimg {
       max-width: 400px;
     }
+
     .backbutton {
       left: 130px;
     }
+
     .relativ_headline {
       width: 30%;
       left: 22%;
       top: 82%;
     }
+
     .movie_text_box {
       margin-left: 150px;
       margin-right: 150px;
@@ -179,8 +183,10 @@
           display: flex;
           flex-direction: column;
         }
+
       }
     }
+
     .buttonbox {
       position: absolute;
       left: 700px;
