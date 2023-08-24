@@ -32,7 +32,7 @@ const MovieDetails = () => {
   return (
     <div className="details_wrapper">
       <div className="backbutton">
-        <img src={button} alt="" onClick={() => navigate(-2)} />
+        <img src={button} alt="" onClick={() => navigate(-1)} />
       </div>
 
       <img src={`https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`} alt="Photo" className="mainimg" />
