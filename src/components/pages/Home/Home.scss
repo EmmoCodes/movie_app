@@ -95,6 +95,11 @@
     color: #fc2121;
   }
 }
+
+.hidden_section {
+  display: none;
+}
+
 @media screen and (min-width: 391px) {
   .searchbar_wrapper {
     max-width: 360px;
@@ -116,6 +121,7 @@
     }
   }
   .slider_wrapper {
+    display: none;
     max-width: 585px;
     div:nth-of-type(1) img {
       width: 100%;
@@ -123,5 +129,47 @@
   }
   .navbarmobilesection {
     z-index: 2;
+  }
+
+  .hidden_section {
+    display: block;
+  }
+  .animated_banner_container {
+    width: 100%;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+    a {
+      color: #fff;
+    }
+    h2 {
+      position: absolute;
+      font-size: 16px;
+      bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-left: 10px;
+    }
+  }
+
+  .animated_banner {
+    display: flex;
+    width: 400%;
+    animation: scroll 30s linear infinite;
+  }
+
+  .image_container {
+    width: 50%;
+  }
+
+  .animated_image {
+    width: 100%;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 }

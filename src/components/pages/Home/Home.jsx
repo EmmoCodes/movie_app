@@ -59,6 +59,36 @@ function Home() {
               ))}
             </AwesomeSlider>
           </article>
+          <section className="animated_banner_container hidden_section">
+            <article className="animated_banner">
+              {randomMovies.map(movie => (
+                <div key={movie.id} className="image_container">
+                  <Link to={`/details/${movie.id}`}>
+                    <img
+                      className="animated_image"
+                      src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                      alt="photos"
+                      key={movie.backdrop_path}
+                    />
+                    <h2>{movie.title}</h2>
+                  </Link>
+                </div>
+              ))}
+              {randomMovies.map(movie => (
+                <div key={movie.id} className="image_container">
+                  <Link to={`/details/${movie.id}`}>
+                    <img
+                      className="animated_image"
+                      src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                      alt="photos"
+                      key={movie.backdrop_path}
+                    />
+                    <h2>{movie.title}</h2>
+                  </Link>
+                </div>
+              ))}
+            </article>
+          </section>
         </div>
       </section>
     </>

@@ -107,3 +107,10 @@
     height: 374px;
   }
 }
+
+.search_input {
+  background-image: url(../../../assets/img/vector.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: calc(100% - 10px) center;
+}
