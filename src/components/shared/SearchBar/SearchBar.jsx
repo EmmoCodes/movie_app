@@ -44,9 +44,6 @@ function SearchBar() {
               placeholder="Search Movie..."
               onChange={handleInputSearch}
               value={inputSearch}
-              // onFocus={() => {
-              //   setSearchFrame(true)
-              // }}
             />
             <button className="lens" type="button">
               <img src={lens} alt="" />
@@ -88,7 +85,6 @@ function SearchBar() {
           </div>
         ) : null}
       </section>
-
       {location.pathname === '/home' ? (
         <>
           <button

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams,useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
 import { apiKey } from '../../../data/api.js'
 import './Trailer.scss'
@@ -10,13 +10,13 @@ import button from '../../../assets/img/backbuttondetails.svg'
 function Trailer() {
   const [trailerData, setTrailerData] = useState([])
   const params = useParams()
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
   useEffect(() => {
     getAllMovies(`https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=${apiKey}`, setTrailerData, 'results')
   }, [params.id])
 
-let trailerKey = ''
+  let trailerKey = ''
 
   trailerData.forEach(item => {
     if (

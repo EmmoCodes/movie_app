@@ -49,7 +49,6 @@ function MovieList() {
       return 0
     })
   }
-
   return (
     <>
       <section className="movie_wrapper">
