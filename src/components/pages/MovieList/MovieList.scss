@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+
   .scroll_to_topbutton {
     position: fixed;
     bottom: 45px;
@@ -16,9 +17,11 @@
     rotate: -90deg;
     scale: -0.8;
   }
+
   .Sort_button_wrapper {
     display: flex;
     justify-content: space-evenly;
+
     .sort_button {
       background: linear-gradient(to right, #ff6b6b, #fc2121);
       border-radius: 10px;
@@ -27,6 +30,7 @@
       color: #fff;
     }
   }
+
   .movie_frame {
     display: flex;
     margin-bottom: 10px;
@@ -39,7 +43,7 @@
         display: block;
         width: 100%;
         border-radius: 10px;
-        box-shadow: 1px 2px  9px black;
+        box-shadow: 1px 2px 9px black;
       }
     }
 
@@ -49,6 +53,7 @@
       align-items: flex-start;
       min-width: 70%;
       justify-content: center;
+      padding-left: 10px;
 
       .frame_text_headline {
         display: flex;
@@ -63,6 +68,8 @@
 
         h1 {
           text-align: start;
+          font-size: 1.1rem;
+          padding-left: 5px;
         }
       }
 
@@ -71,6 +78,7 @@
         min-width: 100%;
         justify-content: space-between;
         flex-direction: row;
+
 
         p {
           font-size: 12px;
@@ -100,11 +108,13 @@
   }
   .movie_wrapper {
     min-height: 95vh;
+
     .Sort_button_wrapper {
       justify-content: normal;
       gap: 20px;
       margin-left: 50px;
     }
+
     .movie_frame {
       gap: 10px;
     }
