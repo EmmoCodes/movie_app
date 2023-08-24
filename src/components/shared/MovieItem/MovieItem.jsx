@@ -13,7 +13,7 @@ function MovieItem({ movie }) {
   const [movieDetails, setMovieDetails] = useState({})
   const [loading, setLoading] = useState(true)
   const { favorites, setFavorites } = useContext(FavoritesContext)
-  const { genreValue } = useContext(FilterContext)
+  const { genreValue, genreActive } = useContext(FilterContext)
 
   useEffect(() => {
     setLoading(true)
@@ -26,7 +26,6 @@ function MovieItem({ movie }) {
     return <p>Is Loading...</p>
   }
 
-  console.log(favorites)
   return (
     <div className="movie_frame">
       <Link to={`/details/${movie.id}`}>
@@ -37,12 +36,16 @@ function MovieItem({ movie }) {
           <h1>{movie.title.substring(0, 20)}</h1>
           <img
             onClick={() => {
-              if (favorites[0]?.id === movie.id) {
-                console.log('FALSCH')
+              const foundMovie = favorites.find(favorite => {
+                return favorite.id === movie.id
+              })
+              if (!foundMovie) {
+                setFavorites(prev => [...prev, movie])
                 return
               }
-              if (favorites.id !== movie.id) {
-                setFavorites(prev => [...prev, movie])
+              if (foundMovie) {
+                console.log('already added')
+                return
               }
             }}
             src={bookmark}
@@ -59,8 +62,14 @@ function MovieItem({ movie }) {
             {movie.release_date.slice(0, 4)}
             <img src={punkt} alt="Punkt Icon" className="punkt" />
           </p>
+          {/*<p>*/}
+          {/*  {movieDetails.genres.find(genre => genre.id === Number(genreValue))?.name}*/}
+          {/*  <img src={punkt} alt="Punkt Icon" className="punkt" />*/}
+          {/*</p>*/}
           <p>
-            {movieDetails.genres.find(genre => genre.id === Number(genreValue))?.name}
+            {genreActive
+              ? movieDetails.genres.find(genre => genre.id === Number(genreValue))?.name
+              : movieDetails.genres[0].name}
             <img src={punkt} alt="Punkt Icon" className="punkt" />
           </p>
           <p>{movieDetails.runtime} m</p>
