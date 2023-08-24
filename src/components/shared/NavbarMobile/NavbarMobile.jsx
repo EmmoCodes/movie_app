@@ -16,13 +16,17 @@ function NavbarMobile() {
           </li>
         </Link>
         <li>
-          <img src={Bookmark} alt="Bookmark Icon" />
+          <Link to="/favorites">
+            <img src={Bookmark} alt="Bookmark Icon" />
+          </Link>
         </li>
         <li>
           <img src={Save} alt="save Icon" />
         </li>
         <li>
-          <img src={Profile} alt="Profile Icon" />
+          <Link to="/profile">
+            <img src={Profile} alt="Profile Icon" />
+          </Link>
         </li>
       </ul>
     </section>

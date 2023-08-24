@@ -35,8 +35,6 @@ function PopularList() {
     return <p>Is Loading....</p>
   }
 
-  console.log(movieData)
-
   return (
     <>
       <section className="movie_wrapper">
