@@ -25,7 +25,19 @@ function App() {
   const [genreValue, setGenreValue] = useState('27')
   const [inputSearch, setInputSearch] = useState('')
   const [movieData, setMovieData] = useState([])
+
+  const [inputValue, setInputValue] = useState('')
+  const [darkTheme, setDarkTheme] = useState(false);
+  const showToggle = !['/', '/getstarted', '/login', '/register'].includes(location.pathname)
+
+  const toggleTheme = () => {
+    console.log('Toggle theme')
+    setDarkTheme(prevTheme => !prevTheme)
+  }
+
+
   const [favorites, setFavorites] = useState([])
+
 
   const handleGenreSearch = event => {
     setGenreValue(event.target.value)
@@ -45,7 +57,7 @@ function App() {
   }
 
   return (
-    <section className="app_background">
+    <section className={`app_background ${darkTheme ? 'dark-theme' : 'light-theme'}`}>
       <FilterContext.Provider value={{ genreValue, handleGenreSearch }}>
         <InputContext.Provider value={{ inputSearch, handleInputSearch, handleSearch, setInputSearch }}>
           <MovieContext.Provider value={{ movieData, setMovieData }}>
@@ -68,10 +80,15 @@ function App() {
         </InputContext.Provider>
       </FilterContext.Provider>
 
-      {location.pathname !== '/' &&
+      { showToggle && (location.pathname !== '/' &&
         location.pathname !== '/getstarted' &&
         location.pathname !== '/login' &&
-        location.pathname !== '/register' && <NavbarMobile />}
+        location.pathname !== '/register' && (
+    <div>
+      <NavbarMobile />
+      <button className="theme-toggle-button" onClick={toggleTheme}></button>
+    </div>
+        )) }
     </section>
   )
 }
