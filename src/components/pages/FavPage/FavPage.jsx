@@ -7,7 +7,7 @@ function FavPage() {
   const { favorites, setFavorites } = useContext(FavoritesContext)
 
   return (
-    <section className="movie_wrapper">
+    <section className="movie_wrapper grid_desktop">
       {favorites.map(movie => (
         <FavItem key={movie.id} id={movie.id} movie={movie} />
       ))}
