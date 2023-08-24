@@ -35,7 +35,7 @@ function Home() {
           <div className="trending">
             <h2>Trending Movies</h2>
             <Link to="/popular">
-              <span>See All</span>
+              <span defaultValue="27">See All</span>
             </Link>
           </div>
 

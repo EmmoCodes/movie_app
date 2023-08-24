@@ -16,12 +16,16 @@ import { MovieContext } from './components/utils/Contexts/MovieContext.jsx'
 import { getAllMovies } from './components/utils/fetches/movieFetch.js'
 import { apiKey } from './data/api.js'
 import PopularList from './components/pages/PopularList/PopularList.jsx'
+import FavPage from './components/pages/FavPage/FavPage.jsx'
+import ProfilePage from './components/pages/ProfilePage/ProfilePage.jsx'
+import { FavoritesContext } from './components/utils/Contexts/FavoritesContext.jsx'
 
 function App() {
   const location = useLocation()
   const [genreValue, setGenreValue] = useState('27')
   const [inputSearch, setInputSearch] = useState('')
   const [movieData, setMovieData] = useState([])
+
   const [inputValue, setInputValue] = useState('')
   const [darkTheme, setDarkTheme] = useState(false);
   const showToggle = !['/', '/getstarted', '/login', '/register'].includes(location.pathname)
@@ -30,6 +34,9 @@ function App() {
     console.log('Toggle theme')
     setDarkTheme(prevTheme => !prevTheme)
   }
+
+
+  const [favorites, setFavorites] = useState([])
 
 
   const handleGenreSearch = event => {
@@ -54,17 +61,21 @@ function App() {
       <FilterContext.Provider value={{ genreValue, handleGenreSearch }}>
         <InputContext.Provider value={{ inputSearch, handleInputSearch, handleSearch, setInputSearch }}>
           <MovieContext.Provider value={{ movieData, setMovieData }}>
-            <Routes>
-              <Route path="/home" element={<Home />} />
-              <Route path="/getstarted" element={<GetStarted />} />
-              <Route path="/" element={<Landingpage />} />
-              <Route path="/register" element={<RegisterForm />} />
-              <Route path="/list" element={<MovieList />} />
-              <Route path="/details/:id" element={<MovieDetails />} />
-              <Route path="/login" element={<LoginForm />} />
-              <Route path="/popular" element={<PopularList />} />
-              <Route path="/trailer/:id" element={<Trailer />} />
-            </Routes>
+            <FavoritesContext.Provider value={{ favorites, setFavorites }}>
+              <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/getstarted" element={<GetStarted />} />
+                <Route path="/" element={<Landingpage />} />
+                <Route path="/register" element={<RegisterForm />} />
+                <Route path="/list" element={<MovieList />} />
+                <Route path="/details/:id" element={<MovieDetails />} />
+                <Route path="/login" element={<LoginForm />} />
+                <Route path="/popular" element={<PopularList />} />
+                <Route path="/trailer/:id" element={<Trailer />} />
+                <Route path="/favorites" element={<FavPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
+              </Routes>
+            </FavoritesContext.Provider>
           </MovieContext.Provider>
         </InputContext.Provider>
       </FilterContext.Provider>

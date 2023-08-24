@@ -33,7 +33,7 @@ function MovieItem({ movie }) {
       <div className="movie_frame_text">
         <div className="frame_text_headline">
           <h1>{movie.title.substring(0, 20)}</h1>
-          <img src={bookmark} alt="Bookmark Icon" />
+          <img datatype={movie.id} src={bookmark} alt="Bookmark Icon" />
         </div>
         <div className="frame_text_info">
           <p>

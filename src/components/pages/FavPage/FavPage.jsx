@@ -1,9 +1,10 @@
 import React from 'react'
+import './FavPage.scss'
 
 function FavPage() {
   return (
     <div>
-      <h1>fav page</h1>
+      <h1>Your favorites</h1>
     </div>
   )
 }
