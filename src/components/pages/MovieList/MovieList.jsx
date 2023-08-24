@@ -64,7 +64,6 @@ function MovieList() {
     setMovieData(sortedData)
   }
 
-  console.log(movieData)
   return (
     <>
       <section className="movie_wrapper">

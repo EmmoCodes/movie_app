@@ -6,12 +6,13 @@ import punkt from '../../../assets/img/Ellipse.svg'
 import { apiKey } from '../../../data/api.js'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
 import { FilterContext } from '../../utils/Contexts/FilterContext.jsx'
+import { FavoritesContext } from '../../utils/Contexts/FavoritesContext.jsx'
 
 function MovieItem({ movie }) {
   const [movieId, setMovieId] = useState(movie.id)
   const [movieDetails, setMovieDetails] = useState({})
   const [loading, setLoading] = useState(true)
-
+  const { favorites, setFavorites } = useContext(FavoritesContext)
   const { genreValue } = useContext(FilterContext)
 
   useEffect(() => {
@@ -25,6 +26,7 @@ function MovieItem({ movie }) {
     return <p>Is Loading...</p>
   }
 
+  console.log(favorites)
   return (
     <div className="movie_frame">
       <Link to={`/details/${movie.id}`}>
@@ -33,7 +35,19 @@ function MovieItem({ movie }) {
       <div className="movie_frame_text">
         <div className="frame_text_headline">
           <h1>{movie.title.substring(0, 20)}</h1>
-          <img datatype={movie.id} src={bookmark} alt="Bookmark Icon" />
+          <img
+            onClick={() => {
+              if (favorites[0]?.id === movie.id) {
+                console.log('FALSCH')
+                return
+              }
+              if (favorites.id !== movie.id) {
+                setFavorites(prev => [...prev, movie])
+              }
+            }}
+            src={bookmark}
+            alt="Bookmark Icon"
+          />
         </div>
         <div className="frame_text_info">
           <p>

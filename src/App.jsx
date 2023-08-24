@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
 import './App.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Home from './components/pages/Home/Home'
 import MovieList from './components/pages/MovieList/MovieList'
 import RegisterForm from './components/pages/RegisterForm/RegisterForm.jsx'
@@ -25,7 +25,14 @@ function App() {
   const [genreValue, setGenreValue] = useState('27')
   const [inputSearch, setInputSearch] = useState('')
   const [movieData, setMovieData] = useState([])
-  const [favorites, setFavorites] = useState([])
+  const [favorites, setFavorites] = useState(() => {
+    const localFavorites = JSON.parse(localStorage.getItem('favorites'))
+    return localFavorites ? localFavorites : []
+  })
+
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites))
+  }, [favorites])
 
   const handleGenreSearch = event => {
     setGenreValue(event.target.value)
