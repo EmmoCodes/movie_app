@@ -66,3 +66,10 @@
     font-size: 15px;
   }
 }
+@media screen and (min-width: 391px) {
+  .get_started_text {
+    button {
+      min-width: 25%;
+    }
+  }
+}

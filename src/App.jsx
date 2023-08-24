@@ -42,7 +42,7 @@ function App() {
   }
 
   return (
-    <>
+    <section className="app_background">
       <FilterContext.Provider value={{ genreValue, handleGenreSearch }}>
         <InputContext.Provider value={{ inputSearch, handleInputSearch, handleSearch, setInputSearch }}>
           <MovieContext.Provider value={{ movieData, setMovieData }}>
@@ -65,7 +65,7 @@ function App() {
         location.pathname !== '/getstarted' &&
         location.pathname !== '/login' &&
         location.pathname !== '/register' && <NavbarMobile />}
-    </>
+    </section>
   )
 }
 
