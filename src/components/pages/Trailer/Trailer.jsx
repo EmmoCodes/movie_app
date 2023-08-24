@@ -6,6 +6,7 @@ import './Trailer.scss'
 import trailer from '../../../assets/img/watchtrailer.png'
 import notrailer from '../../../assets/img/notrailer.png'
 import button from '../../../assets/img/backbuttondetails.svg'
+import cinema from '../../../assets/img/cinema.jpg'
 
 function Trailer() {
   const [trailerData, setTrailerData] = useState([])
@@ -46,10 +47,9 @@ function Trailer() {
             <iframe
               title="Movie Trailer"
               src={`https://www.youtube.com/embed/${trailerKey}`}
-              width="350px"
-              height="250px"
+              allowFullScreen
               frameBorder="0"
-              allowFullScreen></iframe>
+              ></iframe>
           ) : (
             <img className="no_trailer" src={notrailer} alt="" />
           )}
