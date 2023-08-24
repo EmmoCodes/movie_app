@@ -3,6 +3,13 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+  .remove_fav {
+    background: linear-gradient(to right, #ff6b6b, #fc2121);
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 30px;
+  }
 
   .scroll_to_topbutton {
     position: fixed;
@@ -81,12 +88,12 @@
 
         p {
           font-size: 12px;
-          padding-left: 2px;
+          padding-left: 1px;
 
           .imdb {
             background: center/ contain no-repeat url('../../../assets/img/polygon.svg');
             padding-right: 14px;
-            margin-right: 2px;
+            margin-right: 1px;
           }
 
           .punkt {

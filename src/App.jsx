@@ -21,7 +21,6 @@ import ProfilePage from './components/pages/ProfilePage/ProfilePage.jsx'
 import { FavoritesContext } from './components/utils/Contexts/FavoritesContext.jsx'
 import ToggleBtn from './components/shared/ToggleBtn/ToggleBtn'
 
-
 function App() {
   const location = useLocation()
   const [genreValue, setGenreValue] = useState('27')
@@ -37,19 +36,13 @@ function App() {
     localStorage.setItem('favorites', JSON.stringify(favorites))
   }, [favorites])
 
-
-  const [darkTheme, setDarkTheme] = useState(false);
-  const showToggle = !['/', '/getstarted', '/login', '/register'].includes(location.pathname)
+  const [darkTheme, setDarkTheme] = useState(false)
+  const showToggle = location.pathname === '/home'
 
   const toggleTheme = () => {
     console.log('Toggle theme')
     setDarkTheme(prevTheme => !prevTheme)
   }
-
-
-
-
-
 
   const handleGenreSearch = event => {
     setGenreValue(event.target.value)
@@ -92,15 +85,16 @@ function App() {
         </InputContext.Provider>
       </FilterContext.Provider>
 
-      { showToggle && (location.pathname !== '/' &&
+      <NavbarMobile />
+      {showToggle &&
+        location.pathname !== '/' &&
         location.pathname !== '/getstarted' &&
         location.pathname !== '/login' &&
         location.pathname !== '/register' && (
-    <div>
-      <NavbarMobile />
-     <ToggleBtn onClick={toggleTheme} />
-    </div>
-        )) }
+          <div>
+            <ToggleBtn onClick={toggleTheme} />
+          </div>
+        )}
     </section>
   )
 }

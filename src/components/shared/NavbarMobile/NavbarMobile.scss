@@ -1,10 +1,11 @@
 .navbarmobilesection {
   min-width: 100%;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   left: 0;
   background-color: #fff;
   min-height: 5vh;
+  z-index: 5;
 
   ul {
     display: flex;
