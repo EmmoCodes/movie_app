@@ -44,10 +44,8 @@ function SearchBar() {
               placeholder="Search Movie..."
               onChange={handleInputSearch}
               value={inputSearch}
+              className="search_input"
             />
-            <button className="lens" type="button">
-              <img src={lens} alt="" />
-            </button>
           </div>
         </div>
         {location.pathname !== '/home' && location.pathname !== '/popular' ? (
