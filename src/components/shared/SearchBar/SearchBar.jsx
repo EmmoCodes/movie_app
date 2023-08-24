@@ -85,14 +85,6 @@ function SearchBar() {
       </section>
       {location.pathname === '/home' ? (
         <>
-          <button
-            className={searchFrame ? 'show close_button' : 'hide'}
-            onClick={() => {
-              setSearchFrame(false)
-            }}
-            type="button">
-            Close
-          </button>
           <section className={searchFrame ? 'searched_movie_frame' : 'hide'}>
             {movieData.map(movie => (
               <SearchModalItem key={movie.id} movie={movie} id={movie.id} />

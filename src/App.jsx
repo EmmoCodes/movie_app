@@ -37,7 +37,9 @@ function App() {
   }, [favorites])
 
   const [darkTheme, setDarkTheme] = useState(false)
-  const showToggle = !['/', '/getstarted', '/login', '/register'].includes(location.pathname)
+
+  const showToggle = location.pathname === '/home'
+
 
   const toggleTheme = () => {
     setDarkTheme(prevTheme => !prevTheme)
@@ -85,13 +87,18 @@ function App() {
         </InputContext.Provider>
       </FilterContext.Provider>
 
+
+      <NavbarMobile />
+
+
       {showToggle &&
         location.pathname !== '/' &&
         location.pathname !== '/getstarted' &&
         location.pathname !== '/login' &&
         location.pathname !== '/register' && (
           <div>
-            <NavbarMobile />
+
+
             <ToggleBtn onClick={toggleTheme} />
           </div>
         )}
