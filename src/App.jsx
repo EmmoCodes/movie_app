@@ -19,6 +19,8 @@ import PopularList from './components/pages/PopularList/PopularList.jsx'
 import FavPage from './components/pages/FavPage/FavPage.jsx'
 import ProfilePage from './components/pages/ProfilePage/ProfilePage.jsx'
 import { FavoritesContext } from './components/utils/Contexts/FavoritesContext.jsx'
+import ToggleBtn from './components/shared/ToggleBtn/ToggleBtn'
+
 
 function App() {
   const location = useLocation()
@@ -86,7 +88,7 @@ function App() {
         location.pathname !== '/register' && (
     <div>
       <NavbarMobile />
-      <button className="theme-toggle-button" onClick={toggleTheme}></button>
+     <ToggleBtn onClick={toggleTheme} />
     </div>
         )) }
     </section>
