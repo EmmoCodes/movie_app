@@ -98,8 +98,15 @@
 @media screen and (min-width: 391px) {
   .searchbar_wrapper {
     max-width: 360px;
+    display: flex;
+    align-items: center;
+    .genre_buttons {
+      margin-left: 50px;
+    }
     .movie_list_buttoncontainer {
       justify-content: normal;
+      min-width: 200px;
+      margin-left: 100px;
     }
     .lens {
       top: 40px;

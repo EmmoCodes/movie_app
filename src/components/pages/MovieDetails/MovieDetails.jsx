@@ -29,7 +29,6 @@ const MovieDetails = () => {
     }
   }
 
-
   return (
     <div className="details_wrapper">
       <div className="backbutton">
@@ -51,35 +50,37 @@ const MovieDetails = () => {
           <p>{movieDetail.runtime} min</p>
         </div>
       </div>
+      <section className="movie_text_box">
+        <div className="overview_wrapper">
+          <h2>Overview</h2>
+          <p>{showFullOverview ? movieDetail.overview : truncateOverview(movieDetail.overview)}</p>
 
-      <div className="overview_wrapper">
-        <h2>Overview</h2>
-        <p>{showFullOverview ? movieDetail.overview : truncateOverview(movieDetail.overview)}</p>
-
-        <span className="see_more" onClick={() => setShowFullOverview(!showFullOverview)}>
-          {showFullOverview ? 'See less' : 'See more'}
-        </span>
-      </div>
-
-      <div className="genre_box">
-        <h3>Genre</h3>
-        <div className="genre_name">
-          <p>{movieDetail.genres[0]?.name}</p>
-          <p>{movieDetail.genres[1]?.name}</p>
-          <p>{movieDetail.genres[2]?.name}</p>
-          <p>{movieDetail.genres[3]?.name}</p>
+          <span className="see_more" onClick={() => setShowFullOverview(!showFullOverview)}>
+            {showFullOverview ? 'See less' : 'See more'}
+          </span>
         </div>
-      </div>
+        <section className="genere_language_box">
+          <div className="genre_box">
+            <h3>Genre</h3>
+            <div className="genre_name">
+              <p>{movieDetail.genres[0]?.name}</p>
+              <p>{movieDetail.genres[1]?.name}</p>
+              <p>{movieDetail.genres[2]?.name}</p>
+              <p>{movieDetail.genres[3]?.name}</p>
+            </div>
+          </div>
 
-      <div className="language_box">
-        <h3>Languages</h3>
-        <div className="languages">
-          <p>{movieDetail.spoken_languages[0]?.name}</p>
-          <p>{movieDetail.spoken_languages[1]?.name}</p>
-          <p>{movieDetail.spoken_languages[2]?.name}</p>
-          <p>{movieDetail.spoken_languages[3]?.name}</p>
-        </div>
-      </div>
+          <div className="language_box">
+            <h3>Languages</h3>
+            <div className="languages">
+              <p>{movieDetail.spoken_languages[0]?.name}</p>
+              <p>{movieDetail.spoken_languages[1]?.name}</p>
+              <p>{movieDetail.spoken_languages[2]?.name}</p>
+              <p>{movieDetail.spoken_languages[3]?.name}</p>
+            </div>
+          </div>
+        </section>
+      </section>
       <div className="buttonbox">
         <Link to={`/trailer/${movieDetail.id}`}>
           <button type="button" className="watch_movie_button">
