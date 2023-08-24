@@ -64,6 +64,9 @@
     .see_more {
       color: #fc2121;
     }
+    .see_more:hover {
+      cursor: pointer;
+    }
   }
 
   .genre_box {
@@ -137,35 +140,50 @@
     }
 
     .backbutton {
-      left: 120px;
+      left: 130px;
     }
 
     .relativ_headline {
       width: 30%;
-      left: 21%;
+      left: 22%;
       top: 82%;
     }
 
-    .overview_wrapper {
-      max-width: 500px;
-      padding-top: 150px;
-    }
-
-    .genre_box {
-      margin-top: 150px;
-      display: inline-block;
-
-      .genre_name {
-        display: inline-block;
+    .movie_text_box {
+      margin-left: 150px;
+      margin-right: 150px;
+      display: flex;
+      flex-direction: column;
+      min-width: 500px;
+      .overview_wrapper {
+        max-width: 500px;
+        padding-top: 150px;
       }
-    }
+      .genere_language_box {
+        display: flex;
+        padding-top: 50px;
+        .genre_box {
+          margin-top: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: normal;
+          .genre_name {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+        }
+        .language_box {
+          margin-top: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: normal;
+        }
+        .languages {
+          display: flex;
+          flex-direction: column;
+        }
 
-    .language_box {
-      margin-top: 150px;
-      display: inline-block;
-
-      .languages {
-        flex-direction: column;
       }
     }
 
