@@ -7,12 +7,14 @@ function FavPage() {
   const { favorites, setFavorites } = useContext(FavoritesContext)
 
   return (
+
     <section className="movie_wrapper">
       <article className="item_wrapper">
         {favorites.map(movie => (
           <FavItem key={movie.id} id={movie.id} movie={movie} />
         ))}
       </article>
+
     </section>
   )
 }

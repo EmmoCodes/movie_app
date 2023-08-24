@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Route, Routes, json, useLocation } from 'react-router-dom'
 import './App.scss'
 import { useEffect, useState } from 'react'
 import Home from './components/pages/Home/Home'
@@ -27,6 +27,12 @@ function App() {
   const [genreActive, setGenreActive] = useState(false)
   const [inputSearch, setInputSearch] = useState('')
   const [movieData, setMovieData] = useState([])
+
+  const [darkTheme, setDarkTheme] = useState(() => {
+    const storedTheme = localStorage.getItem('darkTheme')
+    return storedTheme ? JSON.parse(storedTheme) : false;
+  })
+
   const [favorites, setFavorites] = useState(() => {
     const localFavorites = JSON.parse(localStorage.getItem('favorites'))
     return localFavorites ? localFavorites : []
@@ -36,7 +42,9 @@ function App() {
     localStorage.setItem('favorites', JSON.stringify(favorites))
   }, [favorites])
 
-  const [darkTheme, setDarkTheme] = useState(false)
+  useEffect(() => {
+    localStorage.setItem('darkTheme', JSON.stringify(darkTheme))
+  }, [darkTheme])
 
   const showToggle = location.pathname === '/home'
 
