@@ -8,6 +8,7 @@ import { FilterContext } from '../../utils/Contexts/FilterContext.jsx'
 import { InputContext } from '../../utils/Contexts/InputContext.jsx'
 import { MovieContext } from '../../utils/Contexts/MovieContext.jsx'
 import button from '../../../assets/img/backbuttondetails.svg'
+import LoadingAnime from '../../shared/LoadingAnime/LoadingAnime.jsx'
 
 function MovieList() {
   const { movieData, setMovieData } = useContext(MovieContext)
@@ -35,7 +36,7 @@ function MovieList() {
   }, [genreValue])
 
   if (loading === true) {
-    return <p>Is Loading....</p>
+    return <LoadingAnime/>
   }
 
   const sortAscending = () => {
