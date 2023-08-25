@@ -30,7 +30,7 @@ function App() {
 
   const [darkTheme, setDarkTheme] = useState(() => {
     const storedTheme = localStorage.getItem('darkTheme')
-    return storedTheme ? JSON.parse(storedTheme) : false;
+    return storedTheme ? JSON.parse(storedTheme) : false
   })
 
   const [favorites, setFavorites] = useState(() => {
@@ -64,7 +64,7 @@ function App() {
   const handleSearch = event => {
     if (inputSearch === '') return
     getAllMovies(
-      `https://api.themoviedb.org/3/search/movie?query=${inputSearch}&include_adult=false&language=en-US&page=1&api_key=${apiKey}`,
+      `https://api.themoviedb.org/3/search/movie?query=${inputSearch}&include_adult=true&language=en-US&page=1&api_key=${apiKey}`,
       setMovieData,
       'results',
     )

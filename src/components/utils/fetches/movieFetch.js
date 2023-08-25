@@ -6,6 +6,7 @@ export const getAllMovies = (apiKey, setState, key) => {
       }
       return response.json()
     })
-    .then(response => (key ? setState(response[key]) : setState(response)))
+    .then(response => (key ? setState(response[key].filter(movie => !movie.adult)) : setState(response)))
+
     .catch(error => console.log(error.message))
 }

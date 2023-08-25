@@ -62,16 +62,12 @@ function MovieItem({ movie }) {
             {movie.release_date.slice(0, 4)}
             <img src={punkt} alt="Punkt Icon" className="punkt" />
           </p>
-          {/*<p>*/}
-          {/*  {movieDetails.genres.find(genre => genre.id === Number(genreValue))?.name}*/}
-          {/*  <img src={punkt} alt="Punkt Icon" className="punkt" />*/}
-          {/*</p>*/}
           <p>
             {genreActive
-
               ? movieDetails.genres.find(genre => genre.id === Number(genreValue))?.name.substring(0, 9)
-              : movieDetails.genres[0].name.substring(0, 9)}
-
+              : movieDetails.genres[0]
+              ? movieDetails.genres[0].name.substring(0, 9)
+              : 'n.A.'}
             <img src={punkt} alt="Punkt Icon" className="punkt" />
           </p>
           <p>{movieDetails.runtime} m</p>

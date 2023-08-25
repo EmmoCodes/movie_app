@@ -29,7 +29,7 @@ function Home() {
   return (
     <>
       <section className="home">
-        <h1>Welcome</h1>
+        <h1>Welcome, Helmut</h1>
         <SearchBar />
         <div>
           <div className="trending">
