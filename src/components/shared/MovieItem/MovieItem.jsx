@@ -7,6 +7,7 @@ import { apiKey } from '../../../data/api.js'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
 import { FilterContext } from '../../utils/Contexts/FilterContext.jsx'
 import { FavoritesContext } from '../../utils/Contexts/FavoritesContext.jsx'
+import LoadingAnime from '../LoadingAnime/LoadingAnime'
 
 function MovieItem({ movie }) {
   const [movieId, setMovieId] = useState(movie.id)
@@ -23,7 +24,7 @@ function MovieItem({ movie }) {
   }, [genreValue])
 
   if (loading === true) {
-    return <p>Is Loading...</p>
+    return  <LoadingAnime/>
   }
 
   return (

@@ -6,6 +6,7 @@ import button from '../../../assets/img/backbuttondetails.svg'
 import punkt from '../../../assets/img/Ellipse.svg'
 import start from '../../../assets/img/polygon.svg'
 import './MovieDetails.scss'
+import LoadingAnime from '../../shared/LoadingAnime/LoadingAnime.jsx'
 
 const MovieDetails = () => {
   const [showFullOverview, setShowFullOverview] = useState(false)
@@ -17,7 +18,7 @@ const MovieDetails = () => {
   }, [params.id])
 
   if (!movieDetail.id) {
-    return <p>Is Loading...</p>
+    return <LoadingAnime/>
   }
 
   function truncateOverview(overview) {
