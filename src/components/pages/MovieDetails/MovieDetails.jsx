@@ -41,7 +41,7 @@ const MovieDetails = () => {
         <h1>{movieDetail.title.substring(0, 30)}</h1>
         <div className="date_duration_genre">
           <img src={start} alt="star Icon" />
-          <p>{movieDetail.vote_average}</p>
+          <p>{movieDetail.vote_average.toFixed(1)}</p>
           <img src={punkt} alt="punkt Icon" />
           <p>{movieDetail.release_date}</p>
           <img src={punkt} alt="punkt Icon" />
