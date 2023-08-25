@@ -63,11 +63,11 @@ function MovieItem({ movie }) {
           <p>
             <span className="imdb"></span>
             {movie.vote_average.toFixed(1)}
-            <div className="punkt"></div>
+            <span className="punkt"></span>
           </p>
           <p>
             {movie.release_date.slice(0, 4)}
-            <div className="punkt"></div>
+            <span className="punkt"></span>
           </p>
           <p>
             {genreActive
@@ -75,7 +75,7 @@ function MovieItem({ movie }) {
               : movieDetails.genres[0]
               ? movieDetails.genres[0].name.substring(0, 9)
               : 'n.A.'}
-            <div className="punkt"></div>
+            <span className="punkt"></span>
           </p>
           <p>{movieDetails.runtime} m</p>
         </div>
