@@ -43,11 +43,11 @@ const MovieDetails = () => {
         <div className="date_duration_genre">
           <img src={start} alt="star Icon" />
           <p>{movieDetail.vote_average.toFixed(1)}</p>
-          <img src={punkt} alt="punkt Icon" />
+          <div className="punkt"></div>
           <p>{movieDetail.release_date}</p>
-          <img src={punkt} alt="punkt Icon" />
+          <div className="punkt"></div>
           <p>{movieDetail.genres[0]?.name}</p>
-          <img src={punkt} alt="punkt Icon" />
+          <div className="punkt"></div>
           <p>{movieDetail.runtime} min</p>
         </div>
       </div>
