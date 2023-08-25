@@ -4,10 +4,21 @@
   display: flex;
   column-gap: 20px;
 
+
   a img {
     height: 80px;
     border-radius: 10px;
   }
 
 
+}
+
+.modal_movie_text {
+  display: flex;
+
+  h2 {
+
+    font-size: 1.1rem;
+    margin-top: 7px;
+  }
 }

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import star from '../../../assets/img/polygon.svg'
 import bookmark from '../../../assets/img/bookmark.svg'
+import bookmarkred from '../../../assets/img/bookmarkred.svg'
 import punkt from '../../../assets/img/Ellipse.svg'
 import { apiKey } from '../../../data/api.js'
 import { getAllMovies } from '../../utils/fetches/movieFetch.js'
@@ -14,6 +15,9 @@ function MovieItem({ movie }) {
   const [loading, setLoading] = useState(true)
   const { favorites, setFavorites } = useContext(FavoritesContext)
   const { genreValue, genreActive } = useContext(FilterContext)
+  const isFavorite = !!favorites.find(favorite => {
+    return favorite.id === movie.id
+  })
 
   useEffect(() => {
     setLoading(true)
@@ -35,6 +39,7 @@ function MovieItem({ movie }) {
         <div className="frame_text_headline">
           <h1>{movie.title.substring(0, 20)}</h1>
           <img
+            className="bookmark"
             onClick={() => {
               const foundMovie = favorites.find(favorite => {
                 return favorite.id === movie.id
@@ -44,11 +49,12 @@ function MovieItem({ movie }) {
                 return
               }
               if (foundMovie) {
+                setFavorites(prev => prev.filter(favorites => favorites.id !== movie.id))
                 console.log('already added')
                 return
               }
             }}
-            src={bookmark}
+            src={isFavorite ? bookmarkred : bookmark}
             alt="Bookmark Icon"
           />
         </div>

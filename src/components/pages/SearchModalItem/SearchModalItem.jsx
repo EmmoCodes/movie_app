@@ -10,10 +10,7 @@ function SearchModalItem({ movie }) {
       </Link>
       <div className="modal_movie_text">
         <h2>{movie.title.substring(0, 30)}</h2>
-        <p>
-          <span className="imdb"></span>
-          {movie.vote_average.toFixed(1)}
-        </p>
+        <p></p>
       </div>
     </div>
   )
