@@ -1,8 +1,10 @@
-# React + Vite
+# React + Vite + SCSS (SCSS ist nicht von mir geschrieben)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Version 1.0
+Das ist mein Front-End-Abschluss Projekt für das ich 4 Tage Zeit hatte, deshalb ist nicht viel Zeit gewesen um den Code zu refactoren. 
+Eine Movie APP zum suchen von Filmen per Searchbar oder per List und Kategorien.
+Jeder Film hat eine Detail-Page mit der Overview, Daten und die möglichkeit den Trailer anzusehen.
+Der User hat die möglichkeit eine Favoriten-Page zu führen und items wieder zu löschen.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Version 2.0
+Es ist ein Login geplant.
