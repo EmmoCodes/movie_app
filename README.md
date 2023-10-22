@@ -8,11 +8,11 @@ Browse Movies: Discover a vast collection of movies, spanning from the latest re
 
 ## Genre Sorting: Easily filter movies by genre to swiftly find films that align with your cinematic preferences.
 
-[x] Movie Details: Access comprehensive movie details, including the title, release date, short summary, cast, and more. Dive into the world of your favorite films.
+- [x] Movie Details: Access comprehensive movie details, including the title, release date, short summary, cast, and more. Dive into the world of your favorite films.
 
-[x] Watch Trailers: View trailers of movies to get a sneak peek before deciding what to watch. Trailers are just a click away.
+- [x] Watch Trailers: View trailers of movies to get a sneak peek before deciding what to watch. Trailers are just a click away.
 
-[x] Save Favorites: Create and manage a personalized list of your favorite movies. Keep track of the films you've already seen or plan to watch next.
+- [x] Save Favorites: Create and manage a personalized list of your favorite movies. Keep track of the films you've already seen or plan to watch next.
 
 ## Getting Started
 
